@@ -12,13 +12,13 @@ Plug 'tpope/vim-commentary'
 Plug 'bling/vim-airline'
 Plug 'benekastah/neomake'
 Plug 'sickill/vim-pasta'
+Plug 'qpkorr/vim-bufkill'
 
 " GUI
 Plug 'ervandew/supertab'
 
 " Explorers
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'techlivezheng/vim-plugin-minibufexpl'
 Plug 'scrooloose/nerdtree'
 
 " Syntax
@@ -86,6 +86,9 @@ endif
 let g:airline_symbols.space = "\ua0"
 let g:airline#enable#branch = 1
 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
+
 " Ag
 " ==================
 let g:ag_highlight=1
@@ -129,9 +132,10 @@ nnoremap <c-f> <c-f>:call NoScrollAtEOF()<cr>
 
 " Commands
 " ===============================================
-command! Bd bp\|bd \# " Don't Close the VSP on :bd
-:cabbrev q <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'qa' : 'q')<CR> " Make :q Run :qa To Close All Buffers
-:cabbrev qq <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'qa!' : 'qq')<CR> " Make :qq Run :qa! To Close All Buffers
+" Don't close vsp on :bd using Bufkil plugin
+cnoreabbrev bd BD
+" Close all buffers on :q
+cnoreabbrev q qa
 
 " Functions
 " =======================================================
