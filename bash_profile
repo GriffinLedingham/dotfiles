@@ -17,8 +17,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export NODE_PATH=./node_modules
 
 ### Aliases
-#Dir Aliases
+#Kano Aliases
 alias  kano='cd ~/Kano/apps_mobile/apps/xwars'
+alias  kanossh='sh ~/SSH/kano.sh'
 
 # Vim Aliases
 alias  vim='nvim'
@@ -27,9 +28,6 @@ alias  v='nvim'
 alias  vimrc='nvim ~/dotfiles/init.vim'
 alias  bash_profile='nvim ~/dotfiles/bash_profile'
 alias  gitconfig='nvim ~/dotfiles/gitconfig'
-
-# Script Aliases
-alias  kanossh='sh ~/SSH/kano.sh'
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .bash_profile.pysave
