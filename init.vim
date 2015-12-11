@@ -104,6 +104,7 @@ set     background=dark
 " ===========================
 nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>d :CtrlPBuffer<CR>
+nnoremap <leader>q :q<CR>
 
 " Indents Don't Leave Visual Mode
 vnoremap < <gv
@@ -136,7 +137,7 @@ nnoremap <c-f> <c-f>:call NoScrollAtEOF()<cr>
 " Don't close vsp on :bd using Bufkil plugin
 cnoreabbrev bd BD
 " Close all buffers on :q
-cnoreabbrev qq qa
+cnoreabbrev q qa
 
 " Functions
 " =======================================================
