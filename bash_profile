@@ -8,7 +8,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 
 ### Command Line Status
 source ~/.bash/git-prompt
-export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u\[\033[01;30m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[0;33m\]$(parse_git_branch_or_tag)\[\033[m\]\[\033[01;34m\]\w\[\033[00m\]\$ '
+export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[01;32m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[0;33m\]$(parse_git_branch_or_tag)\[\033[m\]\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
