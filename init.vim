@@ -62,8 +62,8 @@ set wildmode=longest:full               " Bash Style Autocompletes
 set wildmenu
 
 " Regexes On /
-nnoremap / /\v
-vnoremap / /\v
+nnoremap \ /\v
+vnoremap \ /\v
 
 " Disable CtrlP Caching
 let g:ctrlp_user_command = 'ag %s -l -g  "" --ignore-dir=plugins/ --ignore-dir=modules/ --ignore-dir=node_modules/'
