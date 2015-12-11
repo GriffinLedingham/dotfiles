@@ -13,6 +13,7 @@ Plug 'bling/vim-airline'
 Plug 'benekastah/neomake'
 Plug 'sickill/vim-pasta'
 Plug 'qpkorr/vim-bufkill'
+Plug 'tpope/vim-fugitive'
 
 " GUI
 Plug 'ervandew/supertab'
@@ -135,7 +136,7 @@ nnoremap <c-f> <c-f>:call NoScrollAtEOF()<cr>
 " Don't close vsp on :bd using Bufkil plugin
 cnoreabbrev bd BD
 " Close all buffers on :q
-cnoreabbrev q qa
+cnoreabbrev qq qa
 
 " Functions
 " =======================================================
