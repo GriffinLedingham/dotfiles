@@ -28,7 +28,8 @@ alias  vimrc='nvim ~/dotfiles/init.vim'
 alias  bash_profile='nvim ~/dotfiles/bash_profile'
 alias  gitconfig='nvim ~/dotfiles/gitconfig'
 
-#Git Aliases
+# Script Aliases
+alias  kanossh='sh ~/SSH/kano.sh'
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .bash_profile.pysave
