@@ -106,6 +106,7 @@ nnoremap <leader>f :CtrlP<CR>
 nnoremap <leader>d :CtrlPBuffer<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>s  :Ag!<Space>
+nnoremap <leader>w  :BD<CR>
 
 " Indents Don't Leave Visual Mode
 vnoremap < <gv
@@ -120,7 +121,13 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+nnoremap <leader>j <C-W><C-J>
+nnoremap <leader>k <C-W><C-K>
+nnoremap <leader>l <C-W><C-L>
+nnoremap <leader>h <C-W><C-H>
+
 nnoremap <C-]> :vsp<CR>
+nnoremap <leader>] :vsp<CR>
 
 " Git keybinds
 nnoremap <leader>gs :Gstatus<CR>
