@@ -52,12 +52,19 @@
 
   # log
   l = log --graph --date=short
+  lg = log -p
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
   short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
   simple = log --pretty=format:\" * %s\"
   shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+  filelog = log -u # show changes to a file
+  outgoing = log -u origin/master..master # outgoing changes (in local, but not origin)
+  pending = !git --no-pager log origin/master..master && echo
+  tree = log --graph --decorate --pretty=oneline
 
-  # pull
+ # pull
   pl = pull                         # pull
 
   # push
