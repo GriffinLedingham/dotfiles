@@ -101,6 +101,7 @@
   svnr = svn rebase
   svnd = svn dcommit
   svnl = svn log --oneline --show-commit
+	spull = !git pull && git submodule sync --recursive && git submodule update --init --recursive
 [format]
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 [mergetool]
@@ -124,6 +125,7 @@
   autocrlf = false
   editor = vim
   excludesfile = ~/.yadr/git/gitignore
+	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
 [advice]
   statusHints = false
 [diff]
@@ -144,3 +146,5 @@
 [user]
 	name = Griffin Ledingham
 	email = gcledingham@gmail.com
+[status]
+	submoduleSummary = true

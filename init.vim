@@ -17,6 +17,7 @@ Plug 'tpope/vim-fugitive'
 
 " GUI
 Plug 'ervandew/supertab'
+Plug 'airblade/vim-gitgutter'
 
 " Explorers
 Plug 'ctrlpvim/ctrlp.vim'
@@ -38,9 +39,16 @@ let g:mapleader = " "
 set number                              " Show Line Numbers
 set virtualedit=all                     " Always Navigate Like Virtual Mode
 set hidden                              " Allow background buffers
-set autoread                    	" Reload Files Automatically
+set autoread				                  	" Reload Files Automatically
 set nowrap                              " No Line Wrap
 set showmatch                           " Bracket Matching
+
+set autoindent
+set smartindent
+set smarttab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 
 set clipboard=unnamed                   " Mac Clipboard
 set backspace=indent,eol,start          " Backspace In Insert
@@ -53,7 +61,7 @@ set undolevels=100                      " Undo Depth
 set visualbell                          " No Sounds
 set noerrorbells                        " No Sounds
 
-set noswapfile 				" No Swap File
+set noswapfile											  	" No Swap File
 set nobackup                            " No Backup
 set nowritebackup                       " No Write Backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
