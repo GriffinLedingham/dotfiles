@@ -75,7 +75,7 @@ nnoremap \ /\v
 vnoremap \ /\v
 
 " Disable CtrlP Caching
-let g:ctrlp_user_command = 'ag %s -l -g  "" --ignore-dir=plugins/ --ignore-dir=modules/ --ignore-dir=node_modules/'
+let g:ctrlp_user_command = 'ag %s -l -g  "" --ignore-dir=cached-copy/ --ignore-dir=plugins/ --ignore-dir=modules/ --ignore-dir=node_modules/'
 
 " Trim White Space
 autocmd BufWritePre * :%s/\s\+$//e
@@ -144,6 +144,9 @@ nnoremap <leader>] :vsp<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gdiff<CR>
 
+" Buffer
+nnoremap <leader>n :enew<CR>
+
 " Make <C-f> Only Scroll To Last Line of File At Bottom Of Buffer
 " (Prevents overscroll, when next-page'ing, but not conciously aiming for bottom of file)
 function! NoScrollAtEOF()
@@ -159,6 +162,7 @@ nnoremap <c-f> <c-f>:call NoScrollAtEOF()<cr>
 cnoreabbrev bd BD
 " Close all buffers on :q
 cnoreabbrev q qa
+cnoreabbrev nt NERDTree
 
 " Functions
 " =======================================================
