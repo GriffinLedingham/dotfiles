@@ -111,6 +111,7 @@ set     background=dark
 " Keybinds
 " ===========================
 nnoremap <leader>p :CtrlP<CR>
+nnoremap <leader><Tab> :CtrlPBuffer<CR>
 
 nnoremap <leader>f <C-f>:call NoScrollAtEOF()<cr>
 nnoremap <leader>d <C-b>
