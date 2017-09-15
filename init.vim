@@ -82,11 +82,6 @@ let g:ctrlp_user_command = 'ag %s -l -g  "" --ignore-dir=cached-copy/ --ignore-d
 " Trim White Space
 autocmd BufWritePre * :%s/\s\+$//e
 
-" NeoMake
-" ======================================
-autocmd! BufWritePost,BufEnter * Neomake
-let g:neomake_javascript_enabled_makers=['eslint']
-
 " Airline
 " ===============================
 let g:airline_powerline_fonts = 1
