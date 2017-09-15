@@ -28,6 +28,7 @@ Plug 'othree/html5.vim', {'for': ['html']}
 Plug 'vim-scripts/HTML-AutoCloseTag', {'for': ['html']}
 Plug 'pangloss/vim-javascript', {'for': ['javascript']}
 Plug 'StanAngeloff/php.vim', {'for': ['php']}
+Plug '2072/PHP-Indenting-for-VIm', {'for': ['php']}
 
 call plug#end()
 
@@ -49,6 +50,7 @@ set smarttab
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
+set expandtab
 
 set clipboard=unnamed                   " Mac Clipboard
 set backspace=indent,eol,start          " Backspace In Insert
@@ -97,6 +99,10 @@ let g:airline#enable#branch = 1
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
+
+" PHP
+" =================
+:let g:PHP_outdentphpescape = 0
 
 " Ag
 " ==================
