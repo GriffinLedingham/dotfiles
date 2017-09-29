@@ -23,6 +23,7 @@ alias  kanossh='sh ~/.ssh/kano.sh'
 alias  kanod='sh ~/.kanohub_rsync_rem_to_loc.sh'
 alias  kanou='sh ~/.kanohub_rsync_loc_to_rem.sh'
 alias  pika='ssh -i ~/pikalytics.pem ec2-user@34.197.205.97'
+alias  watch='sh ~/watcher.sh'
 
 # Vim Aliases
 alias  vim='nvim'
