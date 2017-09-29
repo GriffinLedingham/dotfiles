@@ -4,7 +4,7 @@ bind '"\e[B": history-search-forward'
 
 ### Colors
 export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
+#export LSCOLORS=GxFxCxDxBxegedabagaced
 
 ### Command Line Status
 source ~/.bash/git-prompt
