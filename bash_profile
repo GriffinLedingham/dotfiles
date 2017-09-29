@@ -19,6 +19,7 @@ export NODE_PATH=./node_modules
 ### Aliases
 #Kano Aliases
 alias  kano='cd ~/Kano/apps_mobile/apps/xwars'
+alias  kh='cd ~/Kanohub/kano/apps'
 alias  kanossh='sh ~/.ssh/kano.sh'
 alias  kanod='sh ~/.kanohub_rsync_rem_to_loc.sh'
 alias  kanou='sh ~/.kanohub_rsync_loc_to_rem.sh'

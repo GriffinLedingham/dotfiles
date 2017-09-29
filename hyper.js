@@ -9,7 +9,7 @@ module.exports = {
     updateChannel: 'stable',
 
     // default font size in pixels for all tabs
-    fontSize: 12,
+    fontSize: 14,
 
     // font family with optional fallbacks
     fontFamily: 'Monaco, Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
@@ -33,7 +33,7 @@ module.exports = {
     borderColor: '#333',
 
     // custom css to embed in the main window
-    css: '',
+    css: '.tab_textActive{box-sizing:border-box;color: rgb(91,212,237);border-bottom-width: 0px;border-top: 2px solid rgb(91,212,237) !important;}.tab_textActive .tab_textInner{top:-2px !important;}',
 
     // custom css to embed in the terminal window
     termCSS: '',
