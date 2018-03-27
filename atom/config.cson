@@ -1,0 +1,73 @@
+"*":
+  "autocomplete-plus":
+    autoActivationDelay: 50
+  "bracket-matcher":
+    highlightMatchingLineNumber: true
+  core:
+    disabledPackages: [
+      "pane-full-info"
+      "tabs"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "monokai"
+    ]
+    titleBar: "hidden"
+  editor:
+    showLineNumbers: false
+    tabLength: 4
+  "exception-reporting":
+    userId: "3ce15081-99cb-5071-c8b8-5c2d316aadd2"
+  "find-and-replace":
+    liveSearchMinimumCharacters: 1
+    scrollToResultOnLiveSearch: true
+  "fuzzy-finder":
+    ignoredNames: [
+      ".build_cache"
+      ".deploy"
+      ".elasticbeanstalk"
+      ".githooks"
+      "vendor"
+      "error_logs"
+      "build"
+      "node_modules"
+      "plugins"
+      "libs"
+      ".git"
+      ".ebextensions"
+      "public"
+    ]
+    useAlternateScoring: false
+  "goto-definition":
+    performanceMode: true
+  "incremental-search":
+    instantSearch: true
+    landAtPointInsteadOfRange: true
+  "linter-php":
+    errorReporting: false
+    executablePath: "/usr/bin/php"
+  "linter-ui-default":
+    panelHeight: 17
+    panelRepresents: "Current Line"
+  "no-title-bar": {}
+  "remote-sync":
+    autoHideLogPanel: true
+  tabs:
+    enableMruTabSwitching: false
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  "vim-mode-plus":
+    ignoreCaseForFind: true
+    ignoreCaseForSearch: true
+    lastSuccesfulMatch: true
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
+    smoothScrollOnFullScrollMotion: true
+    smoothScrollOnFullScrollMotionDuration: 300
+    smoothScrollOnHalfScrollMotion: true
+    smoothScrollOnHalfScrollMotionDuration: 300
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+    keepMarkdownLineBreakWhitespace: false

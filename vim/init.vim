@@ -38,7 +38,6 @@ let mapleader = " "
 let g:mapleader = " "
 
 set number                              " Show Line Numbers
-set virtualedit=all                     " Always Navigate Like Virtual Mode
 set hidden                              " Allow background buffers
 set autoread				                  	" Reload Files Automatically
 set nowrap                              " No Line Wrap
@@ -47,9 +46,9 @@ set showmatch                           " Bracket Matching
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set expandtab
 
 set clipboard=unnamed                   " Mac Clipboard
@@ -133,6 +132,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+nnoremap <S-w> b
+nnoremap ! ^
 
 nnoremap <leader>j <C-W><C-J>
 nnoremap <leader>k <C-W><C-K>

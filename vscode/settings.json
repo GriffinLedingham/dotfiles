@@ -1,0 +1,102 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "files.trimTrailingWhitespace": true,
+    "terminal.integrated.shellArgs.osx": ["-l"],
+    "window.openFilesInNewWindow": "off",
+    "workbench.activityBar.visible": false,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+
+    "workbench.editor.showTabs": false,
+
+    "editor.lineNumbers": "relative",
+    "editor.minimap.enabled": false,
+
+    "editor.renderLineHighlight": "gutter",
+    "editor.cursorBlinking": "solid",
+
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before":["W"],
+            "after":["b"]
+        },
+        {
+            "before":["!"],
+            "after":["^"]
+        },
+        {
+            "before":["<leader>","`"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "workbench.action.terminal.toggleTerminal"
+                }
+            ]
+        },
+        {
+            "before":["<leader>","k"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "quokka.createJavaScriptFile"
+                }
+            ]
+        },
+        {
+            "before":["/"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "actions.find"
+                }
+            ]
+        },
+        {
+            "before":["<leader>","f"],
+            "after":["<C-d>"]
+        },
+        {
+            "before":["<leader>","d"],
+            "after":["<C-u>"]
+        },
+        {
+            "before":["<leader>","p"],
+            "after":[],
+            "commands":[
+                {
+                    "command":"workbench.action.quickOpen",
+                    "args":[]
+                }
+            ]
+        },
+        {
+            "before":["<leader>","l"],
+            "after":[],
+            "commands":[
+                {
+                    "command":"workbench.action.focusNextGroup",
+                    "args":[]
+                }
+            ]
+        },
+        {
+            "before":["<leader>","h"],
+            "after":[],
+            "commands":[
+                {
+                    "command":"workbench.action.focusPreviousGroup",
+                    "args":[]
+                }
+            ]
+        }
+    ],
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Monokai",
+    "workbench.statusBar.feedback.visible": false
+}
