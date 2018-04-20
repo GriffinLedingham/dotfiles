@@ -7,6 +7,7 @@
     disabledPackages: [
       "pane-full-info"
       "tabs"
+      "disable-arrow-keys"
     ]
     telemetryConsent: "no"
     themes: [
@@ -14,6 +15,16 @@
       "monokai"
     ]
     titleBar: "hidden"
+  "disable-keybindings":
+    allCommunityPackages: true
+    exceptCommunityPackages: [
+      "fuzzy-finder"
+      "ex-mode"
+      "vim-mode-plus"
+    ]
+    prefixKeys: [
+      "cmd-k"
+    ]
   editor:
     showLineNumbers: false
     tabLength: 4
@@ -55,8 +66,7 @@
     autoHideLogPanel: true
   tabs:
     enableMruTabSwitching: false
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   "vim-mode-plus":
     ignoreCaseForFind: true
     ignoreCaseForSearch: true

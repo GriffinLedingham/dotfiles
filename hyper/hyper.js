@@ -33,7 +33,7 @@ module.exports = {
     borderColor: '#333',
 
     // custom css to embed in the main window
-    css: '.header_header {display:none;} .term_term {margin-top:0px;}.tabs_borderShim{border:0;} .tabs_title,.tab_textActive{box-sizing:border-box;color: rgb(79,108,161);border-bottom-width: 0px;border-top: 2px solid rgb(79,108,161) !important;}.tab_textActive .tab_textInner{top:-2px !important;}.tab_tab{background:rgba(48, 51, 53,0);opacity:0.5;}.tabs_nav{background: rgba(0,0,0,0);}.tab_active,.tabs_title{background:rgba(39, 40, 34,0);opacity:1;}',
+    css: '/*.header_header {display:none;}*/ .term_term {margin-top:0px;}.tabs_borderShim{border:0;} .tabs_title,.tab_textActive{    box-sizing: border-box;color: rgb(91, 212, 237);border-bottom-width: 0px;border-top: 2px solid rgb(91, 212, 237) !important;}.tab_textActive .tab_textInner{top:-2px !important;}.tab_tab{background:rgba(48, 51, 53,0);opacity:0.5;}.tabs_nav{background: rgba(0,0,0,0);}.tab_active,.tabs_title{background:rgba(39, 40, 34,0);opacity:1;}',
 
     // custom css to embed in the terminal window
     termCSS: '',
@@ -115,7 +115,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: [],
+  plugins: ["hyper-tab-icons"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here

@@ -40,6 +40,7 @@
   'ctrl-4':'vim-mode-plus:move-to-last-character-of-line'
   'left':'unset!'
   'right':'noop'
+  'cmd-k': 'fuzzy-finder:toggle-buffer-finder'
 
 # workspace
 # -------------------------
@@ -127,14 +128,11 @@
 
   'cmd-shift-r': 'goto-definition:go'
 
-  'ctrl-k':'core:move-up'
-  'ctrl-j':'core:move-down'
-
   # 'k': 'vim-mode-plus:move-up-wrap'
   # 'j': 'vim-mode-plus:move-down-wrap'
 
-  'up': 'vim-mode-plus:move-up'
-  'down': 'vim-mode-plus:move-down'
+  # 'up': 'vim-mode-plus:move-up'
+  # 'down': 'vim-mode-plus:move-down'
 
   'g k': 'vim-mode-plus:move-up-screen'
   'g j': 'vim-mode-plus:move-down-screen'

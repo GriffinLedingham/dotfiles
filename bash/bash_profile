@@ -17,12 +17,17 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export NODE_PATH=./node_modules
 
 ### Aliases
+
+#Dev Aliases
+alias  gs='grunt serve'
+
 #Kano Aliases
 alias  kano='cd ~/Kano/apps_mobile/apps/xwars'
-alias  kh='cd ~/Kanohub/kano/apps'
 alias  kanossh='sh ~/.ssh/kano.sh'
 alias  kanod='sh ~/.kanohub_rsync_rem_to_loc.sh'
 alias  pika='ssh -i ~/pikalytics.pem ec2-user@34.197.205.97'
+alias  rw='cd ~/Kano/Kanohub && kanod && remotely watch'
+alias  kh='cd ~/Kano/Kanohub/kano/apps'
 
 alias  bs='docker run -it -p 3000:3000 battlesnake/battle_snake'
 
@@ -60,3 +65,23 @@ parse_git_branch_or_tag() {
 }
 
 export ANDROID_HOME="/Users/griffinledingham/Library/Android/sdk/"
+
+case "$TERM" in
+xterm*|rxvt*)
+    PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
+    show_command_in_title_bar()
+    {
+        case "$BASH_COMMAND" in
+            *\033]0*)
+                ;;
+            *)
+                echo -ne "\033]0;${BASH_COMMAND} - ${PWD##*/}\007"
+                ;;
+        esac
+    }
+    trap show_command_in_title_bar DEBUG
+    ;;
+*)
+    ;;
+esac
+

@@ -71,12 +71,14 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set wildmode=longest:full               " Bash Style Autocompletes
 set wildmenu
 
+set relativenumber
+
 " Regexes On /
 nnoremap \ /\v
 vnoremap \ /\v
 
 " Disable CtrlP Caching
-let g:ctrlp_user_command = 'ag %s -l -g  "" --ignore-dir=cached-copy/ --ignore-dir=plugins/ --ignore-dir=modules/ --ignore-dir=node_modules/'
+let g:ctrlp_user_command = 'ag %s -l -g  "" --ignore-dir=cached-copy/ --ignore-dir=plugins/ --ignore-dir=modules/ --ignore-dir=node_modules/ --ignore-dir=build/ --ignore-dir=public/ --ignore-dir=bin/ --ignore=dir=vendor/ --ignore-dir=error_logs/'
 
 " Trim White Space
 autocmd BufWritePre * :%s/\s\+$//e
@@ -150,6 +152,8 @@ nnoremap <leader>gd :Gdiff<CR>
 
 " Buffer
 nnoremap <leader>n :enew<CR>
+
+nnoremap <leader>\ :NERDTreeToggle<CR>
 
 " Make <C-f> Only Scroll To Last Line of File At Bottom Of Buffer
 " (Prevents overscroll, when next-page'ing, but not conciously aiming for bottom of file)

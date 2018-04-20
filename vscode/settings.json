@@ -7,6 +7,10 @@
     "workbench.iconTheme": "vscode-icons",
     "workbench.editor.enablePreviewFromQuickOpen": false,
 
+    "php.suggest.basic" : false,
+    "php.executablePath" : "/usr/bin/php",
+
+
     "workbench.editor.showTabs": false,
 
     "editor.lineNumbers": "relative",
