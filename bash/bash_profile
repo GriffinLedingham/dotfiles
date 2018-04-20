@@ -1,10 +1,27 @@
 ### Autocomplete On Arrows
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
+if [ -t 1 ]
+then
+  bind '"\e[A": history-search-backward'
+  bind '"\e[B": history-search-forward'
+fi
 
 ### Colors
 export CLICOLOR=1
 #export LSCOLORS=GxFxCxDxBxegedabagaced
+
+TERM=xterm
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
 
 ### Command Line Status
 source ~/.bash/git-prompt
@@ -32,6 +49,7 @@ alias  kh='cd ~/Kano/Kanohub/kano/apps'
 alias  bs='docker run -it -p 3000:3000 battlesnake/battle_snake'
 
 # Vim Aliases
+alias  nvim='~/nvim.appimage'
 alias  vim='nvim'
 alias  vi='nvim'
 alias  v='nvim'
@@ -63,6 +81,8 @@ parse_git_branch_or_tag() {
   fi
   echo $OUT
 }
+
+eval `keychain --agents ssh --eval id_rsa`
 
 export ANDROID_HOME="/Users/griffinledingham/Library/Android/sdk/"
 

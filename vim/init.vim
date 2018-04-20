@@ -78,7 +78,8 @@ nnoremap \ /\v
 vnoremap \ /\v
 
 " Disable CtrlP Caching
-let g:ctrlp_user_command = 'ag %s -l -g  "" --ignore-dir=cached-copy/ --ignore-dir=plugins/ --ignore-dir=modules/ --ignore-dir=node_modules/ --ignore-dir=build/ --ignore-dir=public/ --ignore-dir=bin/ --ignore=dir=vendor/ --ignore-dir=error_logs/'
+let g:ctrlp_user_command = 'ag %s -l -g  "" --ignore-dir=cached-copy/ --ignore-dir=plugins/ --ignore-dir=modules/ --ignore-dir=node_modules/ --ignore-dir=build/ --ignore-dir=public/ --ignore-dir=bin/ --ignore-dir=vendor/ --ignore-dir=error_logs/'
+let g:ctrlp_working_path_mode = 'a'
 
 " Trim White Space
 autocmd BufWritePre * :%s/\s\+$//e
