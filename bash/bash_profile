@@ -49,7 +49,6 @@ alias  kh='cd ~/Kano/Kanohub/kano/apps'
 alias  bs='docker run -it -p 3000:3000 battlesnake/battle_snake'
 
 # Vim Aliases
-alias  nvim='~/nvim.appimage'
 alias  vim='nvim'
 alias  vi='nvim'
 alias  v='nvim'
@@ -104,4 +103,3 @@ xterm*|rxvt*)
 *)
     ;;
 esac
-
