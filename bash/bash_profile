@@ -79,8 +79,6 @@ parse_git_branch_or_tag() {
   echo $OUT
 }
 
-eval `keychain --agents ssh --eval id_rsa`
-
 export ANDROID_HOME="/Users/griffinledingham/Library/Android/sdk/"
 
 case "$TERM" in
