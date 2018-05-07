@@ -1,6 +1,5 @@
 "*":
-  "autocomplete-plus":
-    autoActivationDelay: 50
+  "autocomplete-plus": {}
   "bracket-matcher":
     highlightMatchingLineNumber: true
   core:
@@ -8,6 +7,10 @@
       "pane-full-info"
       "tabs"
       "disable-arrow-keys"
+      "linter"
+      "linter-eslint"
+      "linter-php"
+      "linter-ui-default"
     ]
     telemetryConsent: "no"
     themes: [
@@ -48,7 +51,18 @@
       ".git"
       ".ebextensions"
       "public"
+      "tracks"
+      "play"
+      "portal"
+      "modules"
+      "core"
+      "system"
+      "tests"
+      "build_tools"
+      "src"
+      "scripts"
     ]
+    preserveLastSearch: true
     useAlternateScoring: false
   "goto-definition":
     performanceMode: true

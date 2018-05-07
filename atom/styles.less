@@ -1,0 +1,78 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+ */
+
+
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+
+// style the background color of the tree view
+.tree-view {
+  // background-color: whitesmoke;
+}
+
+// style the background and foreground colors on the atom-text-editor-element itself
+atom-text-editor {
+  // color: white;
+  // background-color: hsl(180, 24%, 12%);
+}
+
+// style UI elements inside atom-text-editor
+atom-text-editor .cursor {
+  // border-color: red;
+}
+
+.pane-info.active:before {
+    content: '';
+    width:100%;
+    height:100%;
+    position:absolute;
+    left: 100px;
+    direction: rtl;
+    right: 0;
+    top: 0;
+    background: -webkit-linear-gradient(left, rgba(40,40,40,1) 0%,rgba(40,40,40,0) 63%,rgba(40,40,40,0) 100%);
+text-align: right;
+}
+.pane-info.active {
+  color: rgb(180,180,180);
+  background:none;
+  // background: rgba(100,100,100,0.3);
+}
+
+.pane-info {
+  border-radius: 0;
+  margin: 0;
+  top: initial;
+  position:absolute;
+  right: 0;
+  bottom: 0;
+  width:400px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  direction: rtl;
+  background: transparent;
+    text-align: right;
+    overflow: hidden;
+  &:hover {
+    opacity: 0;
+  }
+}
+
+atom-panel-container.top {
+  padding: 6px;
+  background: #282828;
+}
+
+atom-text-editor .gutter {
+  background-color: #282828;
+}
