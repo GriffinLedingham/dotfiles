@@ -46,6 +46,8 @@
   cp = cherry-pick -x               # grab a change from a branch
 
   # diff
+  dfif = diff                          # diff unstaged changes
+  dffi = diff                          # diff unstaged changes
   d = diff                          # diff unstaged changes
   dc = diff --cached                # diff staged changes
   last = diff HEAD^                 # diff last committed change
@@ -93,6 +95,9 @@
   s = status                        # status
   st = status                       # status
   stat = status                     # status
+  sttaus = status                     # status
+  sattus = status                     # status
+  stauts = status                     # status
 
   # tag
   t = tag -n                        # show tags with <n> lines of each tag message
