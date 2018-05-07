@@ -18,7 +18,6 @@
   {"keys":[" ","b"],"command": "show_overlay", "args": {"overlay": "goto", "show_files": true},"context":[{"key":"setting.command_mode", "operand":true}]},
   {"keys":["super+b"],"command": "show_overlay", "args": {"overlay": "goto", "show_files": true}},
   {"keys":[" ","r"],"command": "goto_definition","context":[{"key":"setting.command_mode", "operand":true}]},
-  {"keys":[" ","w"],"command": "save","context":[{"key":"setting.command_mode", "operand":true}]},
   { "keys": [" ","s"], "command": "goto_symbol_in_project","context":[{"key":"setting.command_mode", "operand":true}]},
 
   { "keys": ["!"], "command": "set_motion", "args": {
@@ -41,4 +40,10 @@
     "clip_to_line": true },
     "context": [{"key": "setting.command_mode"}]
   },
+  { "keys": [" ", "l"], "command": "travel_to_pane", "args": {"direction": "right"},"context":[{"key":"setting.command_mode", "operand":true}] },
+  { "keys": [" ", "h"], "command": "travel_to_pane", "args": {"direction": "left"},"context":[{"key":"setting.command_mode", "operand":true}] },
+  { "keys": [" ", "["], "command": "create_pane", "args": {"direction": "left"}, "context":[{"key":"setting.command_mode", "operand":true}] },
+  { "keys": [" ", "]"], "command": "create_pane", "args": {"direction": "right"}, "context":[{"key":"setting.command_mode", "operand":true}] },
+  { "keys": [" ", "w"], "command": "destroy_pane", "args": {"direction": "self"}, "context":[{"key":"setting.command_mode", "operand":true}] },
+
 ]
