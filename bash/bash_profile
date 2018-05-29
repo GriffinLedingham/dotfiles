@@ -9,6 +9,10 @@ fi
 export CLICOLOR=1
 #export LSCOLORS=GxFxCxDxBxegedabagaced
 
+if [ -x "$(command -v keychain)" ]; then
+  eval `keychain --eval id_rsa`
+fi
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -47,7 +51,8 @@ alias  kh='cd ~/Kano/Kanohub/kano/apps'
 alias  bs='docker run -it -p 3000:3000 battlesnake/battle_snake'
 
 # Vim Aliases
-alias  vim='nvim'
+alias  nvim='~/nvim.appimage'
+alias  vim='~/nvim.appimage'
 alias  vi='nvim'
 alias  v='nvim'
 alias  vimrc='nvim ~/Git/dotfiles/init.vim'
