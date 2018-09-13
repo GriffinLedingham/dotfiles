@@ -1,15 +1,6 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-    // {
-    //     "key":"shift+1",
-    //     "command":"cursorHome",
-    //     "when": "vim.mode != 'Insert'"
-    // },
-    // {
-    //     "key":"shift+w",
-    //     "command":"cursorWordStartLeft",
-    //     "when": "vim.mode != 'Insert'"
-    // },
+
     {
         "key":"shift+cmd+d",
         "command":"editor.action.copyLinesDownAction"
@@ -44,19 +35,9 @@
         "command": "-workbench.action.toggleSidebarVisibility"
     },
     {
-        "key": "shift+cmd+r",
-        "command": "editor.action.goToDeclaration",
-        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-    },
-    {
         "key": "f12",
         "command": "-editor.action.goToDeclaration",
         "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
-    },
-    {
-        "key": "shift+cmd+r",
-        "command": "editor.action.previewDeclaration",
-        "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
     },
     {
         "key": "alt+f12",
@@ -127,5 +108,13 @@
         "key": "cmd+]",
         "command": "-editor.action.indentLines",
         "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+cmd+r",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
+        "key": "cmd+t",
+        "command": "-workbench.action.showAllSymbols"
     }
 ]

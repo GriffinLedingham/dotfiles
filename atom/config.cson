@@ -1,4 +1,9 @@
 "*":
+  "atom-material-ui":
+    colors:
+      abaseColor: "#64b3ef"
+    ui:
+      panelShadows: true
   "autocomplete-plus": {}
   "bracket-matcher":
     highlightMatchingLineNumber: true
@@ -14,7 +19,7 @@
     ]
     telemetryConsent: "no"
     themes: [
-      "one-dark-ui"
+      "atom-material-ui"
       "monokai"
     ]
     titleBar: "hidden"
@@ -86,9 +91,7 @@
     ignoreCaseForSearch: true
     lastSuccesfulMatch: true
     notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
-    smoothScrollOnFullScrollMotion: true
     smoothScrollOnFullScrollMotionDuration: 300
-    smoothScrollOnHalfScrollMotion: true
     smoothScrollOnHalfScrollMotionDuration: 300
   welcome:
     showOnStartup: false
