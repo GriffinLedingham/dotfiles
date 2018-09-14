@@ -19,8 +19,9 @@
     //     "when": "editorTextFocus && !editorReadonly"
     // },
     {
-        "key": "cmd+\\",
-        "command": "workbench.view.explorer"
+        "key": "space \\",
+        "command": "workbench.view.explorer",
+        "when": "editorTextFocus && !editorReadonly"
     },
     {
         "key": "shift+cmd+e",
@@ -51,14 +52,6 @@
     {
         "key": "ctrl+-",
         "command": "-workbench.action.navigateBack"
-    },
-    {
-        "key": "` `",
-        "command": "workbench.action.terminal.toggleTerminal"
-    },
-    {
-        "key": "ctrl+`",
-        "command": "-workbench.action.terminal.toggleTerminal"
     },
     {
         "key": "ctrl+cmd+up",
@@ -111,10 +104,6 @@
     },
     {
         "key": "shift+cmd+r",
-        "command": "workbench.action.showAllSymbols"
-    },
-    {
-        "key": "cmd+t",
-        "command": "-workbench.action.showAllSymbols"
+        "command": "editor.action.previewDeclaration"
     }
 ]

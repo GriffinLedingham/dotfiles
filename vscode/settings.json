@@ -19,12 +19,23 @@
     "editor.renderLineHighlight": "gutter",
     "editor.cursorBlinking": "solid",
 
+    "workbench.colorCustomizations": {
+        "scrollbar.shadow": "#FFF0"
+    },
+
     "vim.easymotion": true,
     "vim.sneak": true,
     "vim.incsearch": true,
     "vim.useSystemClipboard": true,
     "vim.hlsearch": true,
     "vim.leader": "<space>",
+
+    "vim.insertModeKeyBindings": [
+        {
+          "before": ["j","k"],
+          "after": ["<Esc>"]
+        }
+      ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before":["W"],
@@ -100,7 +111,7 @@
             ]
         }
     ],
-    "window.zoomLevel": 0,
-    "workbench.colorTheme": "Monokai",
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "One Dark Pro Vivid",
     "workbench.statusBar.feedback.visible": false
 }
