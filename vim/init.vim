@@ -109,6 +109,7 @@ let g:ag_highlight=1
 " Colors
 " =============
 syntax on
+set background=dark
 colorscheme onedark
 
 " Keybinds
