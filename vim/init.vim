@@ -59,8 +59,9 @@ set incsearch                           " Search Results While Typing
 set history=1000                        " History Depth
 set undolevels=100                      " Undo Depth
 
-set visualbell                          " No Sounds
+" set visualbell                          " No Sounds
 set noerrorbells                        " No Sounds
+set novb
 
 set noswapfile											  	" No Swap File
 set nobackup                            " No Backup
@@ -107,11 +108,8 @@ let g:ag_highlight=1
 
 " Colors
 " =============
-" color   onedark
-" syntax  enable
 syntax on
 colorscheme onedark
-" set     background=dark
 
 " Keybinds
 " ===========================
