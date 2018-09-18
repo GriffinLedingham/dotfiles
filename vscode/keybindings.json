@@ -19,11 +19,6 @@
     //     "when": "editorTextFocus && !editorReadonly"
     // },
     {
-        "key": "space \\",
-        "command": "workbench.view.explorer",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
         "key": "shift+cmd+e",
         "command": "-workbench.view.explorer"
     },

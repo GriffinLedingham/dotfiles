@@ -36,6 +36,17 @@
           "after": ["<Esc>"]
         }
       ],
+
+    "vim.visualModeKeyBindings": [
+        {
+            "before":["W"],
+            "after":["b"]
+        },
+        {
+            "before":["!"],
+            "after":["^"]
+        }
+    ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before":["W"],

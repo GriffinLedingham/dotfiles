@@ -1,6 +1,9 @@
 set encoding=utf-8
 set nocompatible
 
+ set completeopt=menu,noinsert
+
+
 " Plugged
 " ===============================
 call plug#begin('~/.vim/plugged')
@@ -14,6 +17,16 @@ Plug 'benekastah/neomake'
 Plug 'sickill/vim-pasta'
 Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sleuth'
+Plug 'captbaritone/better-indent-support-for-php-with-html'
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 " GUI
 Plug 'ervandew/supertab'
@@ -46,9 +59,6 @@ set showmatch                           " Bracket Matching
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
 set expandtab
 
 set clipboard=unnamed                   " Mac Clipboard
@@ -79,7 +89,7 @@ nnoremap \ /\v
 vnoremap \ /\v
 
 " Disable CtrlP Caching
-let g:ctrlp_user_command = 'ag %s -l -g  "" --ignore-dir=cached-copy/ --ignore-dir=plugins/ --ignore-dir=modules/ --ignore-dir=node_modules/ --ignore-dir=build/ --ignore-dir=public/ --ignore-dir=bin/ --ignore-dir=vendor/ --ignore-dir=error_logs/'
+let g:ctrlp_user_command = 'ag %s -l -g  "" --ignore-dir=cached-copy/ --ignore-dir=plugins/ --ignore-dir=modules/ --ignore-dir=node_modules/ --ignore-dir=build/ --ignore-dir=public/ --ignore-dir=bin/ --ignore-dir=vendor/ --ignore-dir=error_logs/ --ignore-dir=scripts/ --ignore-dir=portal/ --ignore-dir=tracks/'
 let g:ctrlp_working_path_mode = 'a'
 
 " Trim White Space
@@ -106,6 +116,24 @@ let g:airline#extensions#tabline#show_buffers = 1
 " ==================
 let g:ag_highlight=1
 
+" CtrlP
+" ==================
+let g:ctrlp_abbrev = {
+    \ 'gmode': 't',
+    \ 'abbrevs': [
+        \ {
+        \ 'pattern': '\(^@.\+\|\\\@<!:.\+\)\@<! ',
+        \ 'expanded': '',
+        \ 'mode': 'pfrz',
+        \ },
+        \ ]
+    \ }
+
+" deoplete
+" ================
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 0
+
 " Colors
 " =============
 syntax on
@@ -115,14 +143,14 @@ colorscheme onedark
 " Keybinds
 " ===========================
 nnoremap <leader>p :CtrlP<CR>
-nnoremap <leader><Tab> :CtrlPBuffer<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
 
 nnoremap <leader>f <C-f>:call NoScrollAtEOF()<cr>
 nnoremap <leader>d <C-b>
 
 nnoremap <leader>q :q<CR>
 nnoremap <leader>s  :Ag!<Space>
-nnoremap <leader>w  :BD<CR>
+nnoremap <leader>w  :BD!<CR>
 
 " Indents Don't Leave Visual Mode
 vnoremap < <gv
@@ -137,8 +165,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-nnoremap <S-w> b
-nnoremap ! ^
+noremap <S-W> b
+noremap ! ^
+
+nnoremap d "_d
+vnoremap d "_d
 
 nnoremap <leader>j <C-W><C-J>
 nnoremap <leader>k <C-W><C-K>
