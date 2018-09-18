@@ -45,9 +45,25 @@
         {
             "before":["!"],
             "after":["^"]
-        }
+        },
+        {
+            "before": [
+              "tab"
+            ],
+            "commands": [
+              "editor.action.indentLines"
+            ]
+        },
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+              "tab"
+            ],
+            "commands": [
+              "editor.action.indentLines"
+            ]
+        },
         {
             "before":["W"],
             "after":["b"]
@@ -62,6 +78,15 @@
             "commands": [
                 {
                     "command": "workbench.action.terminal.toggleTerminal"
+                }
+            ]
+        },
+        {
+            "before":["<leader>","]"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "workbench.action.splitEditorRight"
                 }
             ]
         },
@@ -122,7 +147,8 @@
             ]
         }
     ],
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "workbench.colorTheme": "One Dark Pro Vivid",
-    "workbench.statusBar.feedback.visible": false
+    "workbench.statusBar.feedback.visible": false,
+    "editor.fontSize": 14
 }
