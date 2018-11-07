@@ -60,6 +60,7 @@ set autoindent
 set smartindent
 set smarttab
 set expandtab
+set copyindent
 
 set clipboard=unnamed                   " Mac Clipboard
 set backspace=indent,eol,start          " Backspace In Insert
