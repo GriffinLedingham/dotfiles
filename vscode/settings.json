@@ -4,12 +4,16 @@
     "terminal.integrated.shellArgs.osx": ["-l"],
     "window.openFilesInNewWindow": "off",
     "workbench.activityBar.visible": false,
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.iconTheme": "material-icon-theme",
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "explorer.openEditors.visible": 0,
+
+    "window.titleBarStyle": "custom",
 
     "php.suggest.basic" : false,
-    "php.executablePath" : "/usr/bin/php",
 
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
 
     "workbench.editor.showTabs": false,
 
@@ -17,10 +21,18 @@
     "editor.minimap.enabled": false,
 
     "editor.renderLineHighlight": "gutter",
-    "editor.cursorBlinking": "solid",
+
+    "emmet.excludeLanguages": [
+        "php",
+        "css"
+      ],
 
     "workbench.colorCustomizations": {
-        "scrollbar.shadow": "#FFF0"
+        "scrollbar.shadow": "#FFF0",
+        "statusBar.background": "#97c473",
+        "statusBar.noFolderBackground": "#97c473",
+        "statusBar.debuggingBackground": "#97c473",
+        "statusBar.foreground": "#343c3c"
     },
 
     "vim.easymotion": true,
@@ -30,10 +42,16 @@
     "vim.hlsearch": true,
     "vim.leader": "<space>",
 
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.normal": ["#97c473", "#343c3c"],
+    "vim.statusBarColors.insert": ["#60adf2", "#343c3c"],
+    "vim.statusBarColors.visual": ["#c775e0", "#343c3c"],
+    "vim.statusBarColors.visualline": ["#c775e0", "#343c3c"],
+
     "vim.insertModeKeyBindings": [
         {
           "before": ["j","k"],
-          "after": ["<Esc>"]
+          "after": ["<Esc>","l"]
         }
       ],
 
@@ -55,6 +73,9 @@
             ]
         },
     ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+
+    ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
@@ -69,8 +90,16 @@
             "after":["b"]
         },
         {
+            "before":["S"],
+            "after":["c","c"]
+        },
+        {
             "before":["!"],
             "after":["^"]
+        },
+        {
+            "before":["<leader>","q"],
+            "commands":[{"command":"workbench.action.closeEditorsInGroup"}]
         },
         {
             "before":["<leader>","`"],
@@ -78,6 +107,15 @@
             "commands": [
                 {
                     "command": "workbench.action.terminal.toggleTerminal"
+                }
+            ]
+        },
+        {
+            "before":["<leader>","\\"],
+            "after":[],
+            "commands": [
+                {
+                    "command": "workbench.action.toggleSidebarVisibility"
                 }
             ]
         },
@@ -150,5 +188,14 @@
     "window.zoomLevel": 0,
     "workbench.colorTheme": "One Dark Pro Vivid",
     "workbench.statusBar.feedback.visible": false,
-    "editor.fontSize": 14
+    "editor.fontSize": 14,
+    "typescript.suggest.enabled": false,
+    "editor.colorDecorators": false,
+    "css.validate": false,
+    "scss.validate": false,
+    "editor.cursorBlinking": "solid",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "emmet.showAbbreviationSuggestions": false,
+    "typescript.referencesCodeLens.enabled": true,
+    "typescript.suggest.completeFunctionCalls": true
 }

@@ -1,4 +1,5 @@
-### Autocomplete On Arrows
+#
+# Autocomplete On Arrows
 if [ -t 1 ]
 then
   bind '"\e[A": history-search-backward'
@@ -27,7 +28,8 @@ fi
 
 ### Command Line Status
 source ~/.bash/git-prompt
-export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[01;32m\]\[\033[0;32m\]\[\033[0;33m\]\]$(parse_git_branch_or_tag)\[\033[m\]\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+export PS1='\[\033[38;5;10m\]\u\[\033[0;33m\]$(parse_git_branch_or_tag)\[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]\\$ \[$(tput sgr0)\]'
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -47,14 +49,19 @@ alias  kanod='sh ~/.kanohub_rsync_rem_to_loc.sh'
 alias  pika='ssh -i ~/pikalytics.pem ec2-user@34.197.205.97'
 alias  rw='cd ~/Kano/Kanohub && kanod && remotely watch'
 alias  kh='cd ~/Kano/Kanohub/kano/apps'
+alias  ka='cd ~/Kano/apps/ && clear'
 
 alias  bs='docker run -it -p 3000:3000 battlesnake/battle_snake'
 
 # Vim Aliases
-alias  nvim='~/nvim.appimage'
-alias  vim='~/nvim.appimage'
+
+if [ -f ~/nvim.appimage ]; then
+  alias nvim='~/nvim.appimage'
+fi
+alias  vim='nvim'
 alias  vi='nvim'
 alias  v='nvim'
+
 alias  vimrc='nvim ~/Git/dotfiles/init.vim'
 alias  bashrc='nvim ~/Git/dotfiles/bash_profile'
 alias  gitconfig='nvim ~/Git/dotfiles/gitconfig'

@@ -43,6 +43,10 @@ Plug 'pangloss/vim-javascript', {'for': ['javascript']}
 Plug 'StanAngeloff/php.vim', {'for': ['php']}
 Plug '2072/PHP-Indenting-for-VIm', {'for': ['php']}
 
+" Autocomplete
+Plug 'shawncplus/phpcomplete.vim'
+
+
 call plug#end()
 
 " General
@@ -56,10 +60,12 @@ set autoread				                  	" Reload Files Automatically
 set nowrap                              " No Line Wrap
 set showmatch                           " Bracket Matching
 
-set autoindent
-set smartindent
-set smarttab
-set expandtab
+" set autoindent
+set expandtab       " use spaces instead of tabs
+set autoindent      " autoindent based on line above, works most of the time
+set shiftwidth=4    " when reading, tabs are 4 spaces
+set softtabstop=4   " in insert mode, tabs are 4 spaces
+set nocindent
 
 set clipboard=unnamed                   " Mac Clipboard
 set backspace=indent,eol,start          " Backspace In Insert
@@ -87,6 +93,8 @@ set relativenumber
 " Regexes On /
 nnoremap \ /\v
 vnoremap \ /\v
+
+au BufRead,BufNewFile *.css.php set filetype=css
 
 " Disable CtrlP Caching
 let g:ctrlp_user_command = 'ag %s -l -g  "" --ignore-dir=cached-copy/ --ignore-dir=plugins/ --ignore-dir=modules/ --ignore-dir=node_modules/ --ignore-dir=build/ --ignore-dir=public/ --ignore-dir=bin/ --ignore-dir=vendor/ --ignore-dir=error_logs/ --ignore-dir=scripts/ --ignore-dir=portal/ --ignore-dir=tracks/'
@@ -204,6 +212,7 @@ cnoreabbrev bd BD
 " Close all buffers on :q
 cnoreabbrev q qa
 cnoreabbrev nt NERDTree
+cnoreabbrev W w
 
 " Functions
 " =======================================================
