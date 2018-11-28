@@ -55,6 +55,7 @@
   # log
   l = log --graph --date=short
   lg = log -p
+  logn = log --name-only
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
