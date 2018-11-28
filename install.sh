@@ -35,10 +35,13 @@ ln -sf "$my_dir"/sublime/profile.sublime-keymap ~/Library/"Application Support"/
 echo "Sublime linked!";
 
 cp -r "$my_dir"/vim/autoload ~/.vim/autoload;
+cp -r "$my_dir"/vim/autoload ~/.config/nvim/;
 echo "vim autoload linked!";
 
+cp -r "$my_dir"/vim/colors ~/.config/nvim/;
 cp -r "$my_dir"/vim/colors ~/.vim/colors;
 echo "vim colors linked!";
 
 ln -sf "$my_dir"/vim/init.vim  ~/.vimrc;
+ln -sf "$my_dir"/vim/init.vim  ~/.config/nvim/init.vim;
 echo "vimrc linked!";
