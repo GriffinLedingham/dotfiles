@@ -29,9 +29,9 @@
 
     "workbench.colorCustomizations": {
         "scrollbar.shadow": "#FFF0",
-        "statusBar.background": "#60adf2",
-        "statusBar.noFolderBackground": "#60adf2",
-        "statusBar.debuggingBackground": "#60adf2",
+        "statusBar.background": "#97c473",
+        "statusBar.noFolderBackground": "#97c473",
+        "statusBar.debuggingBackground": "#97c473",
         "statusBar.foreground": "#343c3c"
     },
 
@@ -190,13 +190,12 @@
     "workbench.statusBar.feedback.visible": false,
     "editor.fontSize": 14,
     "typescript.suggest.enabled": false,
-    "typescript.suggest.autoImports": false,
-    "typescript.suggest.paths": false,
     "editor.colorDecorators": false,
     "css.validate": false,
-    "typescript.validate.enable": false,
     "scss.validate": false,
     "editor.cursorBlinking": "solid",
     "typescript.updateImportsOnFileMove.enabled": "always",
-    "emmet.showAbbreviationSuggestions": false
+    "emmet.showAbbreviationSuggestions": false,
+    "typescript.referencesCodeLens.enabled": true,
+    "typescript.suggest.completeFunctionCalls": true
 }
