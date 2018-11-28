@@ -54,9 +54,14 @@ alias  ka='cd ~/Kano/apps/ && clear'
 alias  bs='docker run -it -p 3000:3000 battlesnake/battle_snake'
 
 # Vim Aliases
+
+if [ -f ~/nvim.appimage ]; then
+  alias nvim='~/nvim.appimage'
+fi
 alias  vim='nvim'
 alias  vi='nvim'
 alias  v='nvim'
+
 alias  vimrc='nvim ~/Git/dotfiles/init.vim'
 alias  bashrc='nvim ~/Git/dotfiles/bash_profile'
 alias  gitconfig='nvim ~/Git/dotfiles/gitconfig'
