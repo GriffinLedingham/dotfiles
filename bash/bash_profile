@@ -1,4 +1,5 @@
-### Autocomplete On Arrows
+#
+# Autocomplete On Arrows
 if [ -t 1 ]
 then
   bind '"\e[A": history-search-backward'
@@ -47,12 +48,12 @@ alias  kanod='sh ~/.kanohub_rsync_rem_to_loc.sh'
 alias  pika='ssh -i ~/pikalytics.pem ec2-user@34.197.205.97'
 alias  rw='cd ~/Kano/Kanohub && kanod && remotely watch'
 alias  kh='cd ~/Kano/Kanohub/kano/apps'
+alias  ka='cd ~/Kano/apps/ && clear'
 
 alias  bs='docker run -it -p 3000:3000 battlesnake/battle_snake'
 
 # Vim Aliases
-alias  nvim='~/nvim.appimage'
-alias  vim='~/nvim.appimage'
+alias  vim='nvim'
 alias  vi='nvim'
 alias  v='nvim'
 alias  vimrc='nvim ~/Git/dotfiles/init.vim'
