@@ -45,3 +45,6 @@ echo "vim colors linked!";
 ln -sf "$my_dir"/vim/init.vim  ~/.vimrc;
 ln -sf "$my_dir"/vim/init.vim  ~/.config/nvim/init.vim;
 echo "vimrc linked!";
+
+ln -sf "$my_dir"/chunk/chunkwmrc  ~/.chunkwmrc;
+echo "chunk linked!";
