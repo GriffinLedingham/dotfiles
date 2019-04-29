@@ -38,8 +38,6 @@
   'ctrl-shift-tab': 'pane:show-previous-item'
   'ctrl-1':'vim-mode-plus:move-to-first-character-of-line'
   'ctrl-4':'vim-mode-plus:move-to-last-character-of-line'
-  'left':'unset!'
-  'right':'noop'
   'cmd-k': 'fuzzy-finder:toggle-buffer-finder'
 
 # workspace

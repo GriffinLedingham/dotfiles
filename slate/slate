@@ -35,12 +35,6 @@ bind 1:ctrl;alt         throw 0 resize
 bind 2:ctrl;alt         throw 1 resize
 bind 3:ctrl;alt         throw 2 resize
 
-# Focus Bindings
-bind l:ctrl    focus right
-bind h:ctrl     focus left
-bind k:ctrl       focus up
-bind j:ctrl     focus down
-
 # Window Hints
 bind esc:cmd hint QWERTYUIOP
 bind tab:cmd hint QWERTYUIOP

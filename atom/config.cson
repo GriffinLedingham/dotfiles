@@ -1,4 +1,6 @@
 "*":
+  "atom-autocomplete-php":
+    verboseErrors: true
   "atom-material-ui":
     colors:
       abaseColor: "#64b3ef"
@@ -8,20 +10,31 @@
   "bracket-matcher":
     highlightMatchingLineNumber: true
   core:
+    audioBeep: false
     disabledPackages: [
-      "pane-full-info"
       "tabs"
       "disable-arrow-keys"
       "linter"
-      "linter-eslint"
-      "linter-php"
       "linter-ui-default"
     ]
-    telemetryConsent: "no"
-    themes: [
-      "atom-material-ui"
-      "monokai"
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "node_modules/"
+      ".build_cache/"
+      ".deploy/"
+      "build/"
+      "error_logs/"
+      "public/"
+      ".idea/"
     ]
+    openEmptyEditorOnStart: false
+    telemetryConsent: "no"
     titleBar: "hidden"
   "disable-keybindings":
     allCommunityPackages: true
@@ -71,9 +84,14 @@
     useAlternateScoring: false
   "goto-definition":
     performanceMode: true
+  "ide-php":
+    phpPath: "/usr/bin/php"
   "incremental-search":
     instantSearch: true
     landAtPointInsteadOfRange: true
+  "linter-eslint":
+    global:
+      useGlobalEslint: true
   "linter-php":
     errorReporting: false
     executablePath: "/usr/bin/php"
@@ -85,7 +103,8 @@
     autoHideLogPanel: true
   tabs:
     enableMruTabSwitching: false
-  "tree-view": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
   "vim-mode-plus":
     ignoreCaseForFind: true
     ignoreCaseForSearch: true
@@ -93,6 +112,7 @@
     notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
     smoothScrollOnFullScrollMotionDuration: 300
     smoothScrollOnHalfScrollMotionDuration: 300
+    statusBarModeStringStyle: "long"
   welcome:
     showOnStartup: false
   whitespace:

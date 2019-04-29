@@ -1,6 +1,5 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-
     {
         "key":"shift+cmd+d",
         "command":"editor.action.copyLinesDownAction"
@@ -116,22 +115,7 @@
         "when": "textInputFocus"
     },
     {
-        "key": "cmd+d",
-        "command": "-extension.vim_cmd+d",
-        "when": "editorTextFocus && vim.active && vim.use<D-d> && !inDebugRepl"
-    },
-    {
-        "key": "cmd+d",
-        "command": "extension.vim_cmd+d"
-    },
-    {
-        "key": "cmd+d",
-        "command": "editor.action.addSelectionToNextFindMatch",
-        "when": "editorFocus"
-    },
-    {
-        "key": "cmd+d",
-        "command": "-editor.action.addSelectionToNextFindMatch",
-        "when": "editorFocus"
+        "key": "cmd+k cmd+t",
+        "command": "-workbench.action.selectTheme"
     }
 ]

@@ -29,9 +29,9 @@
 
     "workbench.colorCustomizations": {
         "scrollbar.shadow": "#FFF0",
-        "statusBar.background": "#97c473",
-        "statusBar.noFolderBackground": "#97c473",
-        "statusBar.debuggingBackground": "#97c473",
+        "statusBar.background": "#29D398",
+        "statusBar.noFolderBackground": "#29D398",
+        "statusBar.debuggingBackground": "#29D398",
         "statusBar.foreground": "#343c3c"
     },
 
@@ -43,10 +43,10 @@
     "vim.leader": "<space>",
 
     "vim.statusBarColorControl": true,
-    "vim.statusBarColors.normal": ["#97c473", "#343c3c"],
-    "vim.statusBarColors.insert": ["#60adf2", "#343c3c"],
-    "vim.statusBarColors.visual": ["#c775e0", "#343c3c"],
-    "vim.statusBarColors.visualline": ["#c775e0", "#343c3c"],
+    "vim.statusBarColors.normal": ["#29D398", "#343c3c"],
+    "vim.statusBarColors.insert": ["#26BBCF", "#343c3c"],
+    "vim.statusBarColors.visual": ["#EE628B", "#343c3c"],
+    "vim.statusBarColors.visualline": ["#EE628B", "#343c3c"],
 
     "vim.insertModeKeyBindings": [
         {
@@ -186,16 +186,27 @@
         }
     ],
     "window.zoomLevel": 0,
-    "workbench.colorTheme": "One Dark Pro Vivid",
+    "workbench.colorTheme": "Horizon",
     "workbench.statusBar.feedback.visible": false,
     "editor.fontSize": 14,
-    "typescript.suggest.enabled": false,
     "editor.colorDecorators": false,
     "css.validate": false,
     "scss.validate": false,
     "editor.cursorBlinking": "solid",
     "typescript.updateImportsOnFileMove.enabled": "always",
     "emmet.showAbbreviationSuggestions": false,
-    "typescript.referencesCodeLens.enabled": true,
-    "typescript.suggest.completeFunctionCalls": true
+    "typescript.suggest.completeFunctionCalls": true,
+
+    "vim.handleKeys": {
+        "<C-d>": true
+    },
+    "javascript.implicitProjectConfig.checkJs": true,
+    "emmet.optimizeStylesheetParsing": false,
+    "emmet.showExpandedAbbreviation": "never",
+
+    "javascript.validate.enable": false,
+    "editor.renderWhitespace": "none",
+    "files.associations": {
+        "*.css.php": "css"
+    }
 }
