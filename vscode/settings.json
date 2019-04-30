@@ -29,9 +29,9 @@
 
     "workbench.colorCustomizations": {
         "scrollbar.shadow": "#FFF0",
-        "statusBar.background": "#29D398",
-        "statusBar.noFolderBackground": "#29D398",
-        "statusBar.debuggingBackground": "#29D398",
+        "statusBar.background": "#26BBCF",
+        "statusBar.noFolderBackground": "#26BBCF",
+        "statusBar.debuggingBackground": "#26BBCF",
         "statusBar.foreground": "#343c3c"
     },
 
@@ -186,7 +186,6 @@
         }
     ],
     "window.zoomLevel": 0,
-    "workbench.colorTheme": "Horizon",
     "workbench.statusBar.feedback.visible": false,
     "editor.fontSize": 14,
     "editor.colorDecorators": false,
@@ -208,5 +207,6 @@
     "editor.renderWhitespace": "none",
     "files.associations": {
         "*.css.php": "css"
-    }
+    },
+    "workbench.colorTheme": "Horizon"
 }

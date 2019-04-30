@@ -46,5 +46,6 @@ ln -sf "$my_dir"/vim/init.vim  ~/.vimrc;
 ln -sf "$my_dir"/vim/init.vim  ~/.config/nvim/init.vim;
 echo "vimrc linked!";
 
-ln -sf "$my_dir"/chunkwm/chunkwmrc  ~/.chunkwmrc;
+cp -r "$my_dir"/ubersicht ~/Library/Application\ Support/Übersicht/widgets
+chmod +x ~/Library/Application\ Support/Übersicht/widgets
 echo "chunk linked!";
