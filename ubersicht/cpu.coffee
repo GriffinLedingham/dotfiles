@@ -7,20 +7,21 @@ render: (output) ->
   <link rel="stylesheet" href="./assets/font-awesome/css/all.min.css" />
   <div class="cpu"
     <span></span>
-    <span class="icon"></span>
+    <i class="icon"></i>
+    <span class="cpu-content"></span>
   </div>
   """
 
 update: (output, el) ->
-    $(".cpu span:first-child", el).text("  #{output}")
-    $icon = $(".cpu span.icon", el)
+    $(".cpu-content").html("  #{output}")
+    $icon = $(".cpu i.icon", el)
     $icon.removeClass().addClass("icon")
     $icon.addClass("fas fa-microchip")
 
 style: """
   -webkit-font-smoothing: antialiased
   color: #d5c4a1
-  font: 10px Input
-  left: 20px
-  top: 6px
+  font: 12px Fira Code
+  left: 30px
+  top: 10px
 """

@@ -7,20 +7,21 @@ render: (output) ->
   <link rel="stylesheet" href="./assets/font-awesome/css/all.min.css" />
   <div class="time"
     <span></span>
-    <span class="icon"></span>
+    <i class="icon"></i>
+    <span class="time-content"></span>
   </div>
   """
 
 update: (output, el) ->
-    $(".time span:first-child", el).text("  #{output}")
-    $icon = $(".time span.icon", el)
+    $(".time-content").text("  #{output}")
+    $icon = $(".time i.icon", el)
     $icon.removeClass().addClass("icon")
     $icon.addClass("fas fa-clock")
 
 style: """
   -webkit-font-smoothing: antialiased
   color: #d5c4a1
-  font: 10px Input
-  right: 20px
-  top: 6px
+  font: 12px Fira Code
+  right: 30px
+  top: 10px
 """

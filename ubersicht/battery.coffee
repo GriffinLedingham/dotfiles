@@ -7,14 +7,15 @@ render: (output) ->
   <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css" />
   <div class="battery"
     <span></span>
-    <span class="icon"></span>
+    <i class="icon"></i>
+    <span class="bat-content"></span>
   </div>
   """
 
 update: (output, el) ->
     bat = parseInt(output)
-    $(".battery span:first-child", el).text("  #{output}")
-    $icon = $(".battery span.icon", el)
+    $(".bat-content").text("  #{output}")
+    $icon = $(".battery i.icon", el)
     $icon.removeClass().addClass("icon")
     $icon.addClass("fa #{@icon(bat)}")
 
@@ -32,8 +33,8 @@ icon: (output) =>
 
 style: """
   -webkit-font-smoothing: antialiased
-  font: 9px Input
-  top: 7px
-  right: 80px
+  font: 12px Fira Code
+  top: 10px
+  right: 100px
   color: #d5c4a1
 """
