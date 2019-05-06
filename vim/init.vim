@@ -145,8 +145,8 @@ let g:deoplete#auto_complete_delay = 0
 " Colors
 " =============
 syntax on
-set background=dark
-colorscheme onedark
+set background=light
+colorscheme solarized
 
 " Keybinds
 " ===========================

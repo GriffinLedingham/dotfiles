@@ -36,6 +36,8 @@ export NODE_PATH=./node_modules
 #Chunk Aliases
 alias chunkstart='launchctl load -w ~/.com.koekeishiya.chunkwm.plist'
 alias chunkstop='launchctl unload -w ~/.com.koekeishiya.chunkwm.plist'
+alias skhds='brew services start skhd'
+alias skhdr='brew services restart skhd'
 
 #Dev Aliases
 alias  gs='grunt serve'

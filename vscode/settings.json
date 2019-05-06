@@ -22,17 +22,17 @@
 
     "editor.renderLineHighlight": "gutter",
 
-    "emmet.excludeLanguages": [
-        "php",
-        "css"
-      ],
+    // "emmet.excludeLanguages": [
+    //     "php",
+    //     "css"
+    //   ],
 
     "workbench.colorCustomizations": {
         "scrollbar.shadow": "#FFF0",
-        "statusBar.background": "#26BBCF",
-        "statusBar.noFolderBackground": "#26BBCF",
-        "statusBar.debuggingBackground": "#26BBCF",
-        "statusBar.foreground": "#343c3c"
+        "statusBar.background": "#839496",
+        "statusBar.noFolderBackground": "#29D398",
+        "statusBar.debuggingBackground": "#29D398",
+        "statusBar.foreground": "#FFFFFF"
     },
 
     "vim.easymotion": true,
@@ -42,11 +42,11 @@
     "vim.hlsearch": true,
     "vim.leader": "<space>",
 
-    "vim.statusBarColorControl": true,
-    "vim.statusBarColors.normal": ["#29D398", "#343c3c"],
-    "vim.statusBarColors.insert": ["#26BBCF", "#343c3c"],
-    "vim.statusBarColors.visual": ["#EE628B", "#343c3c"],
-    "vim.statusBarColors.visualline": ["#EE628B", "#343c3c"],
+    // "vim.statusBarColorControl": true,
+    // "vim.statusBarColors.normal": ["#29D398", "#343c3c"],
+    // "vim.statusBarColors.insert": ["#26BBCF", "#343c3c"],
+    // "vim.statusBarColors.visual": ["#EE628B", "#343c3c"],
+    // "vim.statusBarColors.visualline": ["#EE628B", "#343c3c"],
 
     "vim.insertModeKeyBindings": [
         {
@@ -186,6 +186,7 @@
         }
     ],
     "window.zoomLevel": 0,
+    "workbench.colorTheme": "Solarized Light",
     "workbench.statusBar.feedback.visible": false,
     "editor.fontSize": 14,
     "editor.colorDecorators": false,
@@ -207,6 +208,5 @@
     "editor.renderWhitespace": "none",
     "files.associations": {
         "*.css.php": "css"
-    },
-    "workbench.colorTheme": "Horizon"
+    }
 }
