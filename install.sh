@@ -46,6 +46,9 @@ ln -sf "$my_dir"/vim/init.vim  ~/.vimrc;
 ln -sf "$my_dir"/vim/init.vim  ~/.config/nvim/init.vim;
 echo "vimrc linked!";
 
+ln -sf "$my_dir"/robo/robomongorc.js  ~/.robomongorc.js;
+echo "robo linked!";
+
 ln -sf "$my_dir"/skhd/skhdrc  ~/.skhdrc;
 echo "skhd linked!";
 
