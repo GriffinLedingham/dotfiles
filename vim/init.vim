@@ -106,7 +106,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Airline
 " ===============================
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'tomorrow'
+let g:airline_theme = 'solarized'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif

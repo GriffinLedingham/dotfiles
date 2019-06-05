@@ -55,6 +55,9 @@ echo "skhd linked!";
 ln -sf "$my_dir"/chunkwm/chunkwm  ~/.chunkwmrc;
 echo "chunk linked!";
 
+ln -sf "$my_dir"/tmux/tmux.conf  ~/.tmux.conf;
+echo "tmux linked!";
+
 cp -r "$my_dir"/ubersicht ~/Library/Application\ Support/Übersicht/widgets
 chmod +x ~/Library/Application\ Support/Übersicht/widgets
 echo "ubersicht linked!";

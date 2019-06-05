@@ -10,8 +10,6 @@
 
     "window.titleBarStyle": "custom",
 
-    "php.suggest.basic" : false,
-
     "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
 
@@ -32,7 +30,8 @@
         "statusBar.background": "#839496",
         "statusBar.noFolderBackground": "#29D398",
         "statusBar.debuggingBackground": "#29D398",
-        "statusBar.foreground": "#FFFFFF"
+        "statusBar.foreground": "#FFFFFF",
+        "titleBar.activeBackground": "#FDF6E3" // change this color!
     },
 
     "vim.easymotion": true,
@@ -208,5 +207,6 @@
     "editor.renderWhitespace": "none",
     "files.associations": {
         "*.css.php": "css"
-    }
+    },
+    "workbench.sideBar.location": "left"
 }

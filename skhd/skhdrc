@@ -75,7 +75,12 @@ alt - return : open -a /Applications/iTerm.app
 # open Brave
 cmd + shift - return : open -a '/Applications/Brave Browser.app'
 
+# alt + shift - return : open -a '/Applications/PhpStorm.app'
 alt + shift - return : open -a '/Applications/Visual Studio Code.app'
+
+cmd + ctrl - return : open -a '/Applications/Mail.app'
+
+cmd + alt - return : open -a '/Applications/Calendar.app'
 
 # close focused window
 alt - w : chunkc tiling::window --close
@@ -99,18 +104,18 @@ shift + alt - k : chunkc tiling::window --swap north
 shift + alt - l : chunkc tiling::window --swap east
 
 # move window
-shift + cmd - h : chunkc tiling::window --warp west
-shift + cmd - j : chunkc tiling::window --warp south
-shift + cmd - k : chunkc tiling::window --warp north
-shift + cmd - l : chunkc tiling::window --warp east
+cmd + ctrl - h : chunkc tiling::window --warp west
+cmd + ctrl - j : chunkc tiling::window --warp south
+cmd + ctrl - k : chunkc tiling::window --warp north
+cmd + ctrl - l : chunkc tiling::window --warp east
 
 # make floating window fill screen
 shift + alt - up     : chunkc tiling::window --grid-layout 1:1:0:0:1:1
 
 # send window to monitor and follow focus
 ctrl + alt - 1  : chunkc tiling::window --send-to-monitor 1; chunkc tiling::monitor -f 1
-ctrl + alt - 2  : chunkc tiling::window --send-to-monitor 2; chunkc tiling::monitor -f 2
-ctrl + alt - 3  : chunkc tiling::window --send-to-monitor 3; chunkc tiling::monitor -f 3
+ctrl + alt - 2  : chunkc tiling::window --send-to-monitor 3; chunkc tiling::monitor -f 3
+ctrl + alt - 3  : chunkc tiling::window --send-to-monitor 2; chunkc tiling::monitor -f 2
 
 # increase region size
 shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
