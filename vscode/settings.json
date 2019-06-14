@@ -8,6 +8,8 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "explorer.openEditors.visible": 0,
 
+    "editor.rulers": [ 80 ],
+
     "window.titleBarStyle": "custom",
 
     "editor.fontFamily": "Fira Code",

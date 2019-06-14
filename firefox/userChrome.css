@@ -1,0 +1,202 @@
+:root:not([customizing]) #navigator-toolbox {
+   background-color: #222222 !important;
+}
+
+:root:not([customizing]) #navigator-toolbox #nav-bar {
+   overflow: hidden;
+}
+
+:root:not([customizing]) #navigator-toolbox:focus-within #nav-bar {
+   max-height: 33px;
+   height: 33px;
+   background-color:#222222 !important;
+}
+
+:root:not([customizing]) .tabbrowser-tab:not([pinned="true"]) {
+   -moz-box-flex: 0!important;
+   --tab-min-width: fit-content;
+   max-width: 70px;
+   height:33px;
+}
+
+:root:not([customizing]) .tabbrowser-tab:not([pinned="true"]) .tab-stack {
+   flex-basis: 1;
+}
+
+:root:not([customizing]) .tab-content {
+   padding: 0 6px;
+}
+
+:root:not([customizing]) .tab-line,
+:root:not([customizing]) .tab-text,
+:root:not([customizing]) .tab-close-button {
+   display: none;
+}
+
+:root:not([customizing]) .tab-icon-image {
+   margin: 0px !important;
+}
+
+#back-button {display:none;}
+#forward-button {display:none;}
+#stop-reload-button {display:none;}
+#home-button {display:none;}
+
+#navigator-toolbox {
+  display: flex;
+}
+
+#navigator-toolbox::after {
+  height: 0;
+  display: none;
+}
+
+#nav-bar {
+  width: auto;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  flex: 1 0 600px;
+  max-width: 500px;
+  padding-left: 10px;
+  position: static !important;
+}
+
+#PanelUI-button {
+  position: absolute;
+  right: 0;
+}
+
+hbox.titlebar-buttonbox-container:nth-child(4) {
+  position: absolute;
+  left: 0;
+}
+
+#titlebar {
+  height: 33px !important;
+  width: auto;
+  order: 2;
+}
+
+#TabsToolbar hbox.titlebar-spacer {
+  display: none;
+}
+
+#tabbrowser-tabs .tabbrowser-tab {
+  width: auto !important;
+}
+
+#alltabs-button { display: none; }
+#toolbar-menubar { height: 0 !important; display: none; }
+
+:root:not([uidensity="compact"]) #back-button > .toolbarbutton-icon {
+  height: 28px !important;
+  border: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+:root:not([uidensity="compact"]) #back-button:hover {
+  background: rgba(255,255,255,.1) !important;
+}
+
+#back-button {
+  border-radius: 0 !important;
+}
+
+#identity-icon { display: none; }
+
+#nav-bar-customization-target,
+#urlbar-container,
+#urlbar,
+#identity-box,
+#page-action-buttons {
+  height: 33px;
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+#identity-box,
+#page-action-buttons {
+  flex: 0 1 auto;
+}
+
+#identity-box {
+  padding: 0;
+}
+
+#urlbar .urlbar-input-box {
+  flex: 1;
+  outline: none !important;
+}
+
+#urlbar .urlbar-input {
+  display: flex;
+}
+
+#urlbar .urlbar-input.textbox-input {
+  width: 100%;
+}
+
+#urlbar:hover {
+  background: rgba(0,0,0,.1) !important;
+}
+
+#urlbar:not(.hidden-focus)[focused="true"], .searchbar-textbox[focused="true"] {
+  box-shadow: none !important;
+}
+
+#urlbar {
+  background: transparent !important;
+  border: none !important;
+}
+
+#reload-button {
+  margin-top: 4px !important;
+}
+
+#identity-box {width: 35px !important;margin-left: 55px !important;}
+#identity-box.unknownIdentity {margin-left:30px !important;opacity: 0 !important;}
+
+.urlbar-history-dropmarker {
+    display:none !important;
+}
+
+#page-action-buttons {
+    display:none !important;
+}
+
+#nav-bar-overflow-button {
+    display:none;}
+
+.chromeclass-toolbar-additional {
+    display:none;}
+
+.tab-background[selected="true"] {
+
+ background:rgb(17,17,17) !important;
+
+}
+
+.tabbrowser-tab::after, .tabbrowser-tab::before {
+    border: none !important;
+}
+
+#PanelUI-menu-button {
+    color: #8a8a8a !important;
+}
+
+#identity-icon-labels {display: none !important;}
+
+.search-one-offs {display:none !important;}
+
+#context-back image,
+#context-forward image,
+#context-reload image,
+#context-stop image,
+#context-bookmarkpage image,
+#context-navigation,
+#context-sep-navigation {
+    display:none !important;
+  }

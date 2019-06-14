@@ -73,7 +73,7 @@
 alt - return : open -a /Applications/iTerm.app
 
 # open Brave
-cmd + shift - return : open -a '/Applications/Brave Browser.app'
+cmd + shift - return : open -a '/Applications/Firefox.app'
 
 # alt + shift - return : open -a '/Applications/PhpStorm.app'
 alt + shift - return : open -a '/Applications/Visual Studio Code.app'
