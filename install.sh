@@ -52,7 +52,7 @@ echo "robo linked!";
 ln -sf "$my_dir"/skhd/skhdrc  ~/.skhdrc;
 echo "skhd linked!";
 
-ln -sf "$my_dir"/chunkwm/chunkwm  ~/.chunkwmrc;
+ln -sf "$my_dir"/chunkwm/chunkwmrc  ~/.chunkwmrc;
 echo "chunk linked!";
 
 ln -sf "$my_dir"/tmux/tmux.conf  ~/.tmux.conf;

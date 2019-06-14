@@ -33,7 +33,7 @@
         "statusBar.noFolderBackground": "#29D398",
         "statusBar.debuggingBackground": "#29D398",
         "statusBar.foreground": "#FFFFFF",
-        "titleBar.activeBackground": "#FDF6E3" // change this color!
+        "titleBar.activeBackground": "#fdf6e4"
     },
 
     "vim.easymotion": true,

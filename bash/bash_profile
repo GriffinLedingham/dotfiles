@@ -54,6 +54,8 @@ alias  ka='cd ~/Kano/apps/ && clear'
 
 alias bs='docker run --rm -it -p 3000:3000 sendwithus/battlesnake-server'
 
+alias dockerkill='docker rm -fv $(docker ps -aq)'
+
 # Vim Aliases
 
 if [ -f ~/nvim.appimage ]; then
