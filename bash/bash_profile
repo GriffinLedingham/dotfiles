@@ -34,6 +34,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export NODE_PATH=./node_modules
 
 #Chunk Aliases
+alias yabs='brew services start yabai'
+alias yabk='brew services stop yabai'
 alias chunkstart='launchctl load -w ~/.com.koekeishiya.chunkwm.plist'
 alias chunkstop='launchctl unload -w ~/.com.koekeishiya.chunkwm.plist'
 alias skhds='brew services start skhd'
@@ -71,6 +73,8 @@ alias  gitconfig='nvim ~/Git/dotfiles/gitconfig'
 # The orginal version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 PATH="~/Qt/5.8/clang_64/bin:${PATH}"
+PATH="./vendor/bin:${PATH}"
+PATH="./bin:${PATH}"
 export NODE_PATH=node_modules/
 export PATH
 
