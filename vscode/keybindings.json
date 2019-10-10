@@ -35,11 +35,6 @@
         "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
-        "key": "alt+f12",
-        "command": "-editor.action.previewDeclaration",
-        "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-    },
-    {
         "key": "cmd+-",
         "command": "workbench.action.navigateBack"
     },
@@ -97,10 +92,6 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "shift+cmd+r",
-        "command": "editor.action.previewDeclaration"
-    },
-    {
         "key": "shift+cmd+e",
         "command": "workbench.view.explorer"
     },
@@ -117,5 +108,54 @@
     {
         "key": "cmd+k cmd+t",
         "command": "-workbench.action.selectTheme"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "workbench.action.gotoLine"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "-workbench.action.gotoLine"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "-workbench.action.terminal.findPrevious",
+        "when": "terminalFindWidgetFocused"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "-editor.action.previousMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+cmd+g",
+        "command": "-workbench.action.terminal.findPreviousTerminalFocus",
+        "when": "terminalFocus"
+    },
+    // {
+    //     "key": "shift+cmd+r",
+    //     "command": "editor.action.peekDefinition",
+    //     "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    // },
+    {
+        "key": "alt+f12",
+        "command": "-editor.action.peekDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "shift+cmd+r",
+        "command": "editor.action.peekDefinition"
+    },
+    {
+        "key": "shift+cmd+r",
+        "command": "editor.action.peekDefinition"
     }
 ]

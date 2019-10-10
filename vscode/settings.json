@@ -1,214 +1,324 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "files.trimTrailingWhitespace": true,
-    "terminal.integrated.shellArgs.osx": ["-l"],
-    "window.openFilesInNewWindow": "off",
-    "workbench.activityBar.visible": false,
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "explorer.openEditors.visible": 0,
-
-    "editor.rulers": [ 80 ],
-
-    "window.titleBarStyle": "custom",
-
-    "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures": true,
-
-    "workbench.editor.showTabs": false,
-
-    "editor.lineNumbers": "relative",
-    "editor.minimap.enabled": false,
-
-    "editor.renderLineHighlight": "gutter",
-
-    // "emmet.excludeLanguages": [
-    //     "php",
-    //     "css"
-    //   ],
-
-    "workbench.colorCustomizations": {
-        "scrollbar.shadow": "#FFF0",
-        "statusBar.background": "#839496",
-        "statusBar.noFolderBackground": "#29D398",
-        "statusBar.debuggingBackground": "#29D398",
-        "statusBar.foreground": "#FFFFFF",
-        "titleBar.activeBackground": "#FDF6E3" // change this color!
-    },
-
-    "vim.easymotion": true,
-    "vim.sneak": true,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.hlsearch": true,
-    "vim.leader": "<space>",
-
-    // "vim.statusBarColorControl": true,
-    // "vim.statusBarColors.normal": ["#29D398", "#343c3c"],
-    // "vim.statusBarColors.insert": ["#26BBCF", "#343c3c"],
-    // "vim.statusBarColors.visual": ["#EE628B", "#343c3c"],
-    // "vim.statusBarColors.visualline": ["#EE628B", "#343c3c"],
-
-    "vim.insertModeKeyBindings": [
-        {
-          "before": ["j","k"],
-          "after": ["<Esc>","l"]
-        }
+  "files.trimTrailingWhitespace": true,
+  "terminal.integrated.shellArgs.osx": [
+    "-l"
+  ],
+  "window.openFilesInNewWindow": "off",
+  "workbench.activityBar.visible": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "explorer.openEditors.visible": 0,
+  "editor.rulers": [
+    100
+  ],
+  "window.titleBarStyle": "custom",
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "workbench.editor.showTabs": false,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "gutter",
+  // "emmet.excludeLanguages": [
+  //     "php",
+  //     "css"
+  //   ],
+  "workbench.colorCustomizations": {
+    "scrollbar.shadow": "#FFF0",
+    "statusBar.background": "#4f87ff",
+    "statusBar.noFolderBackground": "#29D398",
+    "statusBar.debuggingBackground": "#29D398",
+    "statusBar.foreground": "#FFFFFF",
+    "titleBar.activeBackground": "#272C35"//"#FDF6E2" // change this color!
+  },
+  "vim.easymotion": true,
+  "vim.sneak": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  // "vim.statusBarColorControl": true,
+  // "vim.statusBarColors.normal": ["#29D398", "#343c3c"],
+  // "vim.statusBarColors.insert": ["#26BBCF", "#343c3c"],
+  // "vim.statusBarColors.visual": ["#EE628B", "#343c3c"],
+  // "vim.statusBarColors.visualline": ["#EE628B", "#343c3c"],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "k"
       ],
-
-    "vim.visualModeKeyBindings": [
+      "after": [
+        "<Esc>",
+        "l"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [
+        "W"
+      ],
+      "after": [
+        "b"
+      ]
+    },
+    {
+      "before": [
+        "!"
+      ],
+      "after": [
+        "^"
+      ]
+    },
+    {
+      "before": [
+        "tab"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "tab"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "W"
+      ],
+      "after": [
+        "b"
+      ]
+    },
+    {
+      "before": [
+        "S"
+      ],
+      "after": [
+        "c",
+        "c"
+      ]
+    },
+    {
+      "before": [
+        "!"
+      ],
+      "after": [
+        "^"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "q"
+      ],
+      "commands": [
         {
-            "before":["W"],
-            "after":["b"]
-        },
-        {
-            "before":["!"],
-            "after":["^"]
-        },
-        {
-            "before": [
-              "tab"
-            ],
-            "commands": [
-              "editor.action.indentLines"
-            ]
-        },
-    ],
-    "vim.visualModeKeyBindingsNonRecursive": [
-
-    ],
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-              "tab"
-            ],
-            "commands": [
-              "editor.action.indentLines"
-            ]
-        },
-        {
-            "before":["W"],
-            "after":["b"]
-        },
-        {
-            "before":["S"],
-            "after":["c","c"]
-        },
-        {
-            "before":["!"],
-            "after":["^"]
-        },
-        {
-            "before":["<leader>","q"],
-            "commands":[{"command":"workbench.action.closeEditorsInGroup"}]
-        },
-        {
-            "before":["<leader>","`"],
-            "after":[],
-            "commands": [
-                {
-                    "command": "workbench.action.terminal.toggleTerminal"
-                }
-            ]
-        },
-        {
-            "before":["<leader>","\\"],
-            "after":[],
-            "commands": [
-                {
-                    "command": "workbench.action.toggleSidebarVisibility"
-                }
-            ]
-        },
-        {
-            "before":["<leader>","]"],
-            "after":[],
-            "commands": [
-                {
-                    "command": "workbench.action.splitEditorRight"
-                }
-            ]
-        },
-        {
-            "before":["<leader>","k"],
-            "after":[],
-            "commands": [
-                {
-                    "command": "quokka.createJavaScriptFile"
-                }
-            ]
-        },
-        {
-            "before":["/"],
-            "after":[],
-            "commands": [
-                {
-                    "command": "actions.find"
-                }
-            ]
-        },
-        {
-            "before":["<leader>","f"],
-            "after":["<C-d>"]
-        },
-        {
-            "before":["<leader>","d"],
-            "after":["<C-u>"]
-        },
-        {
-            "before":["<leader>","p"],
-            "after":[],
-            "commands":[
-                {
-                    "command":"workbench.action.quickOpen",
-                    "args":[]
-                }
-            ]
-        },
-        {
-            "before":["<leader>","l"],
-            "after":[],
-            "commands":[
-                {
-                    "command":"workbench.action.focusNextGroup",
-                    "args":[]
-                }
-            ]
-        },
-        {
-            "before":["<leader>","h"],
-            "after":[],
-            "commands":[
-                {
-                    "command":"workbench.action.focusPreviousGroup",
-                    "args":[]
-                }
-            ]
+          "command": "workbench.action.closeEditorsInGroup"
         }
-    ],
-    "window.zoomLevel": 0,
-    "workbench.colorTheme": "Solarized Light",
-    "workbench.statusBar.feedback.visible": false,
-    "editor.fontSize": 14,
-    "editor.colorDecorators": false,
-    "css.validate": false,
-    "scss.validate": false,
-    "editor.cursorBlinking": "solid",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "emmet.showAbbreviationSuggestions": false,
-    "typescript.suggest.completeFunctionCalls": true,
-
-    "vim.handleKeys": {
-        "<C-d>": true
+      ]
     },
-    "javascript.implicitProjectConfig.checkJs": true,
-    "emmet.optimizeStylesheetParsing": false,
-    "emmet.showExpandedAbbreviation": "never",
-
-    "javascript.validate.enable": false,
-    "editor.renderWhitespace": "none",
-    "files.associations": {
-        "*.css.php": "css"
+    {
+      "before": [
+        "<leader>",
+        "`"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.terminal.toggleTerminal"
+        }
+      ]
     },
-    "workbench.sideBar.location": "left"
+    {
+      "before": [
+        "<leader>",
+        "\\"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.toggleSidebarVisibility"
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "]"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.splitEditorRight"
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "-"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.splitEditorDown"
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "k"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "quokka.createJavaScriptFile"
+        }
+      ]
+    },
+    {
+      "before": [
+        "/"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "actions.find"
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "f"
+      ],
+      "after": [
+        "<C-d>"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "d"
+      ],
+      "after": [
+        "<C-u>"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "p"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.quickOpen",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "l"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.focusNextGroup",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "h"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.focusPreviousGroup",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "j"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.focusBelowGroup",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "k"
+      ],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.focusAboveGroup",
+          "args": []
+        }
+      ]
+    }
+  ],
+  "window.zoomLevel": 0,
+  "workbench.colorTheme": "One Dark Pro Vivid",
+  "editor.fontSize": 14,
+  "editor.colorDecorators": false,
+  "css.validate": false,
+  "scss.validate": false,
+  "editor.cursorBlinking": "solid",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "emmet.showAbbreviationSuggestions": false,
+  "typescript.suggest.completeFunctionCalls": true,
+  "vim.handleKeys": {
+    "<C-d>": true
+  },
+  "javascript.implicitProjectConfig.checkJs": true,
+  "emmet.optimizeStylesheetParsing": false,
+  "emmet.showExpandedAbbreviation": "never",
+  "javascript.validate.enable": false,
+  "editor.renderWhitespace": "none",
+  "files.associations": {
+    "*.css.php": "css"
+  },
+  "workbench.sideBar.location": "left",
+  "editor.wordWrapColumn": 100,
+  "files.autoSaveDelay": 100,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[php]": {
+    "editor.formatOnSave": false
+  },
+  "vsicons.dontShowNewVersionMessage": true,
+  // "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.exclude": {
+    "**/public": true
+  },
+  "search.exclude": {
+    "**/public": true
+  },
+  // "editor.formatOnType": true
 }
