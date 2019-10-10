@@ -19,6 +19,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
+Plug 'terryma/vim-multiple-cursors'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -106,7 +107,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Airline
 " ===============================
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'solarized'
+let g:airline_theme = 'onedark'
+"let g:airline_theme = 'solarized'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -145,8 +147,8 @@ let g:deoplete#auto_complete_delay = 0
 " Colors
 " =============
 syntax on
-set background=light
-colorscheme solarized
+set background=dark
+colorscheme onedark
 
 " Keybinds
 " ===========================
@@ -168,10 +170,14 @@ vnoremap > >gv
 if has('nvim')
   nmap <bs> <c-w>h
 endif
-nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+let g:multi_cursor_start_word_key      = '<C-j>'
+let g:multi_cursor_next_key            = '<C-j>'
+
 
 noremap <S-W> b
 noremap ! ^
