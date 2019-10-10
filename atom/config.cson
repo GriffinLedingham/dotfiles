@@ -1,6 +1,11 @@
 "*":
   "atom-autocomplete-php":
     verboseErrors: true
+  "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnSave: true
+    "atom-ide-diagnostics-ui":
+      autoVisibility: true
   "atom-material-ui":
     colors:
       abaseColor: "#64b3ef"
@@ -9,13 +14,15 @@
   "autocomplete-plus": {}
   "bracket-matcher":
     highlightMatchingLineNumber: true
+  "command-palette":
+    preserveLastSearch: true
   core:
     audioBeep: false
     disabledPackages: [
       "tabs"
       "disable-arrow-keys"
       "linter"
-      "linter-ui-default"
+      "linter-ui-plus"
     ]
     ignoredNames: [
       ".git"
@@ -35,6 +42,10 @@
     ]
     openEmptyEditorOnStart: false
     telemetryConsent: "no"
+    themes: [
+      "one-light-ui"
+      "solarized-light-syntax"
+    ]
     titleBar: "hidden"
   "disable-keybindings":
     allCommunityPackages: true
@@ -48,7 +59,7 @@
     ]
   editor:
     showLineNumbers: false
-    tabLength: 4
+    tabLength: 2
   "exception-reporting":
     userId: "3ce15081-99cb-5071-c8b8-5c2d316aadd2"
   "find-and-replace":
@@ -77,8 +88,8 @@
       "system"
       "tests"
       "build_tools"
-      "src"
       "scripts"
+      "dist"
     ]
     preserveLastSearch: true
     useAlternateScoring: false
@@ -101,11 +112,12 @@
   "no-title-bar": {}
   "remote-sync":
     autoHideLogPanel: true
+  "status-bar": {}
   tabs:
     enableMruTabSwitching: false
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   "vim-mode-plus":
+    automaticallyEscapeInsertModeOnActivePaneItemChange: true
     ignoreCaseForFind: true
     ignoreCaseForSearch: true
     lastSuccesfulMatch: true

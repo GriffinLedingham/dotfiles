@@ -43,13 +43,9 @@
 # workspace
 # -------------------------
 # To maximize none-editor paneItem e.g. setting-view
-'atom-workspace:not(.editor)':
-  'cmd-enter': 'vim-mode-plus:maximize-pane'
+# 'atom-workspace:not(.editor)':
   # conflicts insert-mode ctrl-w and ctr-w in mini editor, so comment out by default
   # 'ctrl-w z': 'vim-mode-plus:maximize-pane'
-
-'atom-workspace .tree-view':
-  'cmd-enter': 'abort!'
 
 # all
 # -------------------------
@@ -105,12 +101,20 @@
   'space ]':  'pane:split-right-and-copy-active-item'
   'space [':  'pane:split-down-and-copy-active-item'
 
+  'space q': 'pane:close'
+
   'space tab': 'fuzzy-finder:toggle-buffer-finder'
 
   'space h': 'window:focus-pane-on-left'
   'space l': 'window:focus-pane-on-right'
   'space k': 'window:focus-pane-above'
   'space j': 'window:focus-pane-below'
+
+  'space \\': 'tree-view:toggle'
+
+  'cmd-shift-e': 'tree-view:show'
+
+  'cmd-shift-r': 'hyperclick:confirm-cursor'
 
   'cmd-c': 'vim-mode-plus:yank'
 
@@ -124,7 +128,7 @@
 
   'space e': 'linter-ui-default:toggle-panel'
 
-  'cmd-shift-r': 'goto-definition:go'
+  # 'cmd-shift-r': 'goto-definition:go'
 
   # 'k': 'vim-mode-plus:move-up-wrap'
   # 'j': 'vim-mode-plus:move-down-wrap'
@@ -280,7 +284,7 @@
 
   'ctrl-w z': 'vim-mode-plus:maximize-pane'
   'ctrl-w Z': 'vim-mode-plus:maximize-pane-without-center'
-  'cmd-enter': 'vim-mode-plus:maximize-pane'
+  # 'cmd-enter': 'vim-mode-plus:maximize-pane'
   # 'cmd-shift-enter': 'vim-mode-plus:maximize-pane-without-center'
 
   'ctrl-w =': 'vim-mode-plus:equalize-panes'
@@ -504,7 +508,6 @@
   'ctrl-cmd-c': 'vim-mode-plus:change-occurrence-from-search'
   'cmd-d': 'vim-mode-plus:select-occurrence-from-search'
   'cmd-o': 'vim-mode-plus:add-occurrence-pattern-from-search'
-  'cmd-enter': 'vim-mode-plus:project-find-from-search'
 
 # normal
 # -------------------------

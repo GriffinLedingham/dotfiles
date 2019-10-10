@@ -69,67 +69,60 @@ text-align: right;
 }
 
 atom-panel-container.top {
-  padding: 6px;
-  background: #21252b;
+    display: none;
+  // padding: 6px;
+  // background: #eee8d5;
 }
 
 atom-text-editor .gutter {
-  background-color: #21252b;
+  // background-color: #21252b;
 }
 
 // add or import these into your Atom styles.less
 
-@normal-color: @text-color-info;
-@insert-color: @text-color-success;
-@visual-color: @text-color-warning;
-@status-bar-color: #21252b;
+@normal-color: #9EC1CF;
+@insert-color: #9EE09E;
+@visual-color: #CC99C9;
+@status-bar-color: #eee8d5;
+
 
 .status-bar-mixin(@mode-color) {
-  color: @status-bar-color;
-  background: @mode-color;
+  color: #444444;
   &:before, &:after {
     content: '';
     vertical-align: middle;
     font-size: 0;
   }
-  &:before {
-    margin-right: 5px;
-    border-top: 1.1rem solid transparent;
-    border-bottom: 1.1rem solid transparent;
-    border-left: 0.8rem solid @status-bar-color;
-  }
-  &:after {
-    margin-left: 5px;
-    border-left: 1rem solid @mode-color;
-    border-top: 1.3rem solid @status-bar-color;
-    border-bottom: 1.3rem solid @status-bar-color;
-  }
 }
 
-/* Custom Styles for Normal mode go here */
-.status-bar-vim-mode-plus-normal {
-  .status-bar-mixin(@normal-color);
-}
-
-/* Custom Styles for Insert mode go here */
-.status-bar-vim-mode-plus-insert {
-  .status-bar-mixin(@insert-color);
-}
-
-/* Custom Styles for Visual mode go here */
-.status-bar-vim-mode-plus-visual {
-  .status-bar-mixin(@visual-color);
-}
+// .status-bar {background: #eee8d5 !important;}
 
 status-bar .file-info.buffer-modified a {
-    color: @status-bar-color;
+    color: black;
 }
 
 status-bar .file-info.buffer-modified {
-    background-color:#ff6b6b !important;
-    color: @status-bar-color !important;
+    background-color:#fdca96 !important;
+    color: black !important;
 }
 
 atom-text-editor .cursor {
   opacity: 1;
+}
+
+.tree-view {
+    font-size: 1em;
+    background: #eee8d5;
+}
+
+.line-ending-tile {
+  display: none;
+}
+
+busy-signal, encoding-selector-status, .github-PushPull, .github-StatusBarTile, .github-ChangedFilesCount {
+  display: none !important;
+}
+
+.status-bar-left div:first-child {
+  float:right;
 }
