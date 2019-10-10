@@ -1,148 +1,74 @@
-#  NOTE(koekeishiya): A list of all built-in modifier and literal keywords can
-#                     be found at https://github.com/koekeishiya/skhd/issues/1
-#
-#                     A hotkey is written according to the following rules:
-#
-#                       hotkey   = <mode> '<' <action> | <action>
-#
-#                       mode     = 'name of mode' | <mode> ',' <mode>
-#
-#                       action   = <keysym> ':' <command> | <keysym> '->' ':' <command>
-#                                  <keysym> ';' <mode>    | <keysym> '->' ';' <mode>
-#
-#                       keysym   = <mod> '-' <key> | <key>
-#
-#                       mod      = 'built-in mod keyword' | <mod> '+' <mod>
-#
-#                       key      = <literal> | <keycode>
-#
-#                       literal  = 'single letter or built-in keyword'
-#
-#                       keycode  = 'apple keyboard kVK_<Key> values (0x3C)'
-#
-#                       ->       = keypress is not consumed by skhd
-#
-#                       command  = command is executed through '$SHELL -c' and
-#                                  follows valid shell syntax. if the $SHELL environment
-#                                  variable is not set, it will default to '/bin/bash'.
-#                                  when bash is used, the ';' delimeter can be specified
-#                                  to chain commands.
-#
-#                                  to allow a command to extend into multiple lines,
-#                                  prepend '\' at the end of the previous line.
-#
-#                                  an EOL character signifies the end of the bind.
-#
-#
-#  NOTE(koekeishiya): A mode is declared according to the following rules:
-#
-#                       mode_decl = '::' <name> '@' ':' <command> | '::' <name> ':' <command> |
-#                                   '::' <name> '@'               | '::' <name>
-#
-#                       name      = desired name for this mode,
-#
-#                       @         = capture keypresses regardless of being bound to an action
-#
-#                       command  = command is executed through '$SHELL -c' and
-#                                  follows valid shell syntax. if the $SHELL environment
-#                                  variable is not set, it will default to '/bin/bash'.
-#                                  when bash is used, the ';' delimeter can be specified
-#                                  to chain commands.
-#
-#                                  to allow a command to extend into multiple lines,
-#                                  prepend '\' at the end of the previous line.
-#
-#                                  an EOL character signifies the end of the bind.
-
-# add an on_enter command to the default mode
-# :: default : chunkc border::color 0xff775759
-#
-# defines a new mode 'test' with an on_enter command, that captures keypresses
-# :: test @ : chunkc border::color 0xff24ccaa
-#
-# from 'default' mode, activate mode 'test'
-# cmd - x ; test
-#
-# from 'test' mode, activate mode 'default'
-# test < cmd - x ; default
-#
-# launch a new terminal instance when in either 'default' or 'test' mode
-# default, test < cmd - return : open -na /Applications/Terminal.app
-
 # open iTerm
-alt - return : open -a /Applications/iTerm.app
+# alt - return : open -a /Applications/iTerm.app
+alt - return : open -a /Applications/Kitty.app
 
 # open Brave
-cmd + shift - return : open -a '/Applications/Firefox.app'
+cmd + shift - return : open -a '/Applications/Brave Browser.app'
+#cmd + shift - return : open -a '/Applications/Chromium.app'
 
 # alt + shift - return : open -a '/Applications/PhpStorm.app'
 alt + shift - return : open -a '/Applications/Visual Studio Code.app'
+#alt + shift - return : open -a '/Applications/Atom.app'
 
-cmd + ctrl - return : open -a '/Applications/Mail.app'
-
-cmd + alt - return : open -a '/Applications/Calendar.app'
+cmd + ctrl - return : open -a '/Applications/Xcode.app'
 
 # close focused window
 alt - w : chunkc tiling::window --close
 
 # focus window
-alt - h : chunkc tiling::window --focus west
-alt - j : chunkc tiling::window --focus south
-alt - k : chunkc tiling::window --focus north
-alt - l : chunkc tiling::window --focus east
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
 
-alt - tab : chunkc tiling::window --focus next
-shift + alt - tab : chunkc tiling::window --focus prev
-
-# equalize size of windows
-shift + alt - 0 : chunkc tiling::desktop --equalize
+alt - tab : yabai -m window --focus next
+shift + alt - tab : yabai -m window --focus prev
 
 # swap window
-shift + alt - h : chunkc tiling::window --swap west
-shift + alt - j : chunkc tiling::window --swap south
-shift + alt - k : chunkc tiling::window --swap north
-shift + alt - l : chunkc tiling::window --swap east
+shift + alt - h : yabai -m window --swap west
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - l : yabai -m window --swap east
 
 # move window
-cmd + ctrl - h : chunkc tiling::window --warp west
-cmd + ctrl - j : chunkc tiling::window --warp south
-cmd + ctrl - k : chunkc tiling::window --warp north
-cmd + ctrl - l : chunkc tiling::window --warp east
-
-# make floating window fill screen
-shift + alt - up     : chunkc tiling::window --grid-layout 1:1:0:0:1:1
+cmd + ctrl - h : yabai -m window --warp west
+cmd + ctrl - j : yabai -m window --warp south
+cmd + ctrl - k : yabai -m window --warp north
+cmd + ctrl - l : yabai -m window --warp east
 
 # send window to monitor and follow focus
-ctrl + alt - 1  : chunkc tiling::window --send-to-monitor 1; chunkc tiling::monitor -f 1
-ctrl + alt - 2  : chunkc tiling::window --send-to-monitor 3; chunkc tiling::monitor -f 3
-ctrl + alt - 3  : chunkc tiling::window --send-to-monitor 2; chunkc tiling::monitor -f 2
+ctrl + alt - 1  : yabai -m window --display 1; yabai -m display --focus 1
+ctrl + alt - 2  : yabai -m window --display 3; yabai -m display --focus 3
+ctrl + alt - 3  : yabai -m window --display 2; yabai -m display --focus 2
 
 # increase region size
-shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
-shift + alt - s : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge south
-shift + alt - w : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge north
-shift + alt - d : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge east
+shift + alt - a : yabai -m window --use-temporary-ratio 0.1 --adjust-window-edge west
+shift + alt - s : yabai -m window --use-temporary-ratio 0.1 --adjust-window-edge south
+shift + alt - w : yabai -m window --use-temporary-ratio 0.1 --adjust-window-edge north
+shift + alt - d : yabai -m window --use-temporary-ratio 0.1 --adjust-window-edge east
 
 # rotate tree
-alt - r : chunkc tiling::desktop --rotate 90
+alt - r : yabai -m space --rotate 90
 
 # toggle desktop offset
-alt - a : chunkc tiling::desktop --toggle offset
+alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # toggle window fullscreen
-ctrl - f : chunkc tiling::window --toggle fullscreen
+ctrl - f : yabai -m window --toggle zoom-fullscreen
 
 # float / unfloat window and center on screen
-alt - t : chunkc tiling::window --toggle float;\
-          chunkc tiling::window --grid-layout 4:4:1:1:2:2
+alt - t : yabai -m window --toggle float;\
+          yabai -m window --grid-layout 4:4:1:1:2:2
 
 # toggle sticky, float and resize to picture-in-picture size
-alt - s : chunkc tiling::window --toggle sticky;\
-          chunkc tiling::window --grid-layout 5:5:4:0:1:1
+alt - s : yabai -m window --toggle sticky;\
+          yabai -m window --grid-layout 5:5:4:0:1:1
+
+cmd + alt - n : yabai -m space --create && \
+                index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
+                yabai -m space --focus "${index}"
 
 # change layout of desktop
-ctrl + alt - a : chunkc tiling::desktop --layout bsp
-ctrl + alt - s : chunkc tiling::desktop --layout monocle
-ctrl + alt - d : chunkc tiling::desktop --layout float
-
-ctrl + alt - w : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_1
+ctrl + alt - a : yabai -m space --layout bsp
+ctrl + alt - s : yabai -m space --layout monocle
+ctrl + alt - d : yabai -m space --layout float
