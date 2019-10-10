@@ -61,3 +61,6 @@ echo "tmux linked!";
 cp -r "$my_dir"/ubersicht ~/Library/Application\ Support/Übersicht/widgets
 chmod +x ~/Library/Application\ Support/Übersicht/widgets
 echo "ubersicht linked!";
+
+ln -sf "$my_dir"/yabai/yabairc  ~/.yabairc;
+echo "yabai linked!";
