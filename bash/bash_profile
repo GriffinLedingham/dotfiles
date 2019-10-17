@@ -83,6 +83,17 @@ export PATH
 # GREP
 alias grep='grep -n --color'
 
+# Set the kitty theme based on the dark-mode stotus
+alias kdark='kitty @ set-colors -a ~/.kitty-dark.conf'
+alias klight='kitty @ set-colors -a ~/.kitty-light.conf'
+is_dark=$(dark-mode status)
+if [ "$is_dark" = "on" ];
+then
+  kdark
+else
+  klight
+fi
+
 parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }

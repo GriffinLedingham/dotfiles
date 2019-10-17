@@ -29,7 +29,7 @@
     "statusBar.noFolderBackground": "#29D398",
     "statusBar.debuggingBackground": "#29D398",
     "statusBar.foreground": "#FFFFFF",
-    "titleBar.activeBackground": "#272C35"//"#FDF6E2" // change this color!
+    // "titleBar.activeBackground": "#272C35"//"#FDF6E2" // change this color!
   },
   "vim.easymotion": true,
   "vim.sneak": true,
@@ -320,5 +320,8 @@
   "search.exclude": {
     "**/public": true
   },
+
+  "autoDarkMode.lightTheme":"Solarized Light",
+  "autoDarkMode.darkTheme":"One Dark Pro Vivid"
   // "editor.formatOnType": true
 }

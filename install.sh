@@ -26,6 +26,8 @@ ln -sf "$my_dir"/karabiner/karabiner.json  ~/.config/karabiner/karabiner.json;
 echo "Karabiner linked!";
 
 ln -sf "$my_dir"/kitty/kitty.conf  ~/.config/kitty/kitty.conf;
+ln -sf "$my_dir"/kitty/kitty-dark.conf  ~/.kitty-dark.conf;
+ln -sf "$my_dir"/kitty/kitty-light.conf  ~/.kitty-light.conf;
 echo "kitty linked!";
 
 ln -sf "$my_dir"/slate/slate  ~/.slate;
