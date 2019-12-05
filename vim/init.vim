@@ -21,14 +21,6 @@ Plug 'tpope/vim-sleuth'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'terryma/vim-multiple-cursors'
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
 " GUI
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
@@ -107,7 +99,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Airline
 " ===============================
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'onedark'
+"let g:airline_theme = 'onedark'
 "let g:airline_theme = 'solarized'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -141,8 +133,8 @@ let g:ctrlp_abbrev = {
 
 " deoplete
 " ================
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 0
+"let g:deoplete#enable_at_startup = 1
+"let g:deoplete#auto_complete_delay = 0
 
 " Colors
 " =============
