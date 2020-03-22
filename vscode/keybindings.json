@@ -12,17 +12,25 @@
         "key":"cmd+b",
         "command":"workbench.action.quickOpen"
     },
+   {
+        "key":"ctrl+w",
+        "command":"workbench.action.closeActiveEditor"
+    },
+   {
+        "key":"ctrl+q",
+        "command":"workbench.action.closeWindow"
+    },
     // {
     //     "key": "tab",
     //     "command": "editor.action.indentLines",
     //     "when": "editorTextFocus && !editorReadonly"
     // },
     {
-        "key": "shift+cmd+e",
-        "command": "-workbench.view.explorer"
+        "key": "ctrl+shift+unknown",
+        "command": "workbench.view.explorer"
     },
     {
-        "key": "cmd+\\",
+        "key": "ctrl+\\",
         "command": "workbench.action.toggleSidebarVisibility"
     },
     {
@@ -151,11 +159,21 @@
         "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
     },
     {
-        "key": "shift+cmd+r",
-        "command": "editor.action.peekDefinition"
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
     },
     {
-        "key": "shift+cmd+r",
+        "key": "ctrl+shift+r",
+        "command": "-editor.action.refactor",
+        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "-workbench.action.quickOpenNavigatePreviousInRecentFilesPicker",
+        "when": "inQuickOpen && inRecentFilesPicker"
+    },
+    {
+        "key": "shift+ctrl+r",
         "command": "editor.action.peekDefinition"
     }
 ]

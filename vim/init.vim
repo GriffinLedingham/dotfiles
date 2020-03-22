@@ -140,7 +140,7 @@ let g:ctrlp_abbrev = {
 " =============
 syntax on
 set background=dark
-colorscheme onedark
+colorscheme monokai
 
 " Keybinds
 " ===========================
