@@ -35,16 +35,21 @@ floating_modifier $mod
 hide_edge_borders smart
 
 ## Launch // Terminal // <Super> Enter ##
-bindsym $mod+Shift+Ctrl+$alt+s exec wmctrl -a st || exec /usr/bin/x-terminal-emulator
+bindsym Shift+Ctrl+$alt+s exec wmctrl -F -a 'st' || exec /usr/bin/x-terminal-emulator -f "Fira Code:size=12"
+bindsym $alt+Return exec wmctrl -F -a 'st' || exec /usr/bin/x-terminal-emulator -f "Fira Code:size=12"
 
 ## Launch // Browser // <Super><Shift> Enter ##
-bindsym Ctrl+$alt+$mod+Shift+f exec wmctrl -a Firefox  || gtk-launch $(xdg-settings get default-web-browser)
+bindsym Ctrl+$alt+Shift+f exec wmctrl -a Chromium || gtk-launch $(xdg-settings get default-web-browser)
+bindsym Ctrl+Shift+Return exec wmctrl -a Chromium || gtk-launch $(xdg-settings get default-web-browser)
+
+bindsym Ctrl+$alt+Shift+d exec wmctrl -a VSCodium || codium
+bindsym $alt+Shift+Return exec wmctrl -a VSCodium || codium
 
 set_from_resource $rofiTheme rofi.theme "regolith-theme"
 
 # rofi app and window launchers
 ## Launch // Application // <Super> Space ##
-bindsym $mod+space exec rofi -show drun -theme $rofiTheme
+bindsym Ctrl+space exec rofi -show drun -theme $rofiTheme #$mod+space exec rofi -show drun -theme $rofiTheme
 ## Launch // Command // <Super><Shift> Space ##
 bindsym $mod+Shift+space exec rofi -show run -theme $rofiTheme
 ## Navigate // Window by Name // <Super><Ctrl> Space ##
@@ -57,22 +62,22 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 ## Navigate // Relative Window // <Super> k j h l ##
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $alt+h focus left
+bindsym $alt+j focus down
+bindsym $alt+k focus up
+bindsym $alt+l focus right
 
 ## Modify // Window Position // <Super><Shift> ↑ ↓ ← → ##
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+#bindsym $mod+Shift+Left move left
+#bindsym $mod+Shift+Down move down
+#bindsym $mod+Shift+Up move up
+#bindsym $mod+Shift+Right move right
 
 ## Modify // Window Position // <Super><Shift> k j h l ##
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym Shift+Left move left
+bindsym Shift+Down move down
+bindsym Shift+Up move up
+bindsym Shift+Right move right
 
 ## Modify // Containing Workspace // <Super><Ctrl><Shift> ↑ ↓ ← → ##
 bindsym $mod+Ctrl+Shift+Left move workspace to output left
@@ -84,7 +89,7 @@ bindsym $mod+Ctrl+Shift+Right move workspace to output right
 bindsym $mod+BackSpace split toggle
 
 ## Modify // Window Fullscreen Toggle // <Super> f ##
-bindsym $mod+f fullscreen toggle
+bindsym Ctrl+Shift+f fullscreen toggle
 
 ## Modify // Window Floating Toggle // <Super><Shift> f ##
 bindsym $mod+Shift+f floating toggle
@@ -100,15 +105,15 @@ bindsym $mod+Shift+t focus mode_toggle
 bindsym $mod+t layout toggle tabbed splith splitv
 
 ## Navigate // Workspace // <Super> 0..9 ##
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
+bindsym Ctrl+1 workspace number $ws1
+bindsym Ctrl+2 workspace number $ws2
+bindsym Ctrl+3 workspace number $ws3
+bindsym Ctrl+4 workspace number $ws4
+bindsym Ctrl+5 workspace number $ws5
+bindsym Ctrl+6 workspace number $ws6
+bindsym Ctrl+7 workspace number $ws7
+bindsym Ctrl+8 workspace number $ws8
+bindsym Ctrl+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 ## Navigate // Workspace // <Super><Ctrl> 0..9 ##
 bindsym $mod+Ctrl+1 workspace number $ws11
@@ -270,7 +275,7 @@ bindsym $mod+r mode "Resize Mode"
 bindsym $mod+Shift+question exec --no-startup-id /usr/bin/remontoire-toggle
 
 # Disable titlebar
-set_from_resource $i3-wm.window.border.size i3-wm.window.border.size 1
+set_from_resource $i3-wm.window.border.size i3-wm.window.border.size 3
 set_from_resource $i3-wm.floatingwindow.border.size i3-wm.floatingwindow.border.size 1
 default_border pixel $i3-wm.window.border.size
 default_floating_border pixel $i3-wm.floatingwindow.border.size
