@@ -35,7 +35,8 @@ floating_modifier $mod
 hide_edge_borders smart
 
 ## Launch // Terminal // <Super> Enter ##
-bindsym Shift+Ctrl+$alt+s exec wmctrl -F -a 'st' || exec /usr/bin/x-terminal-emulator -f "Fira Code:size=12"
+bindsym Shift+Ctrl+$alt+s exec wmctrl -F -a 'bash' || exec ~/.local/kitty.app/bin/kitty
+#bindsym Shift+Ctrl+$alt+s exec wmctrl -F -a 'st' || exec /usr/bin/x-terminal-emulator -f "Fira Code:size=12"
 bindsym $alt+Return exec wmctrl -F -a 'st' || exec /usr/bin/x-terminal-emulator -f "Fira Code:size=12"
 
 ## Launch // Browser // <Super><Shift> Enter ##
@@ -68,16 +69,16 @@ bindsym $alt+k focus up
 bindsym $alt+l focus right
 
 ## Modify // Window Position // <Super><Shift> ↑ ↓ ← → ##
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
+bindsym $alt+Shift+h move left
+bindsym $alt+Shift+j move down
+bindsym $alt+Shift+k move up
+bindsym $alt+Shift+l move right
 
 ## Modify // Window Position // <Super><Shift> k j h l ##
-bindsym Shift+Left move left
-bindsym Shift+Down move down
-bindsym Shift+Up move up
-bindsym Shift+Right move right
+#bindsym Shift+Left move left
+#bindsym Shift+Down move down
+#bindsym Shift+Up move up
+#bindsym Shift+Right move right
 
 ## Modify // Containing Workspace // <Super><Ctrl><Shift> ↑ ↓ ← → ##
 bindsym $mod+Ctrl+Shift+Left move workspace to output left
@@ -89,10 +90,11 @@ bindsym $mod+Ctrl+Shift+Right move workspace to output right
 bindsym $mod+BackSpace split toggle
 
 ## Modify // Window Fullscreen Toggle // <Super> f ##
-bindsym Ctrl+Shift+f fullscreen toggle
+#bindsym Ctrl+Shift+f fullscreen toggle
+bindsym Ctrl+f fullscreen toggle
 
 ## Modify // Window Floating Toggle // <Super><Shift> f ##
-bindsym $mod+Shift+f floating toggle
+bindsym $alt+t floating toggle
 ## Modify // Move to Scratchpad // <Super><Ctrl> m ##
 bindsym $mod+Ctrl+m move to scratchpad
 ## Navigate // Scratchpad // <Super><Ctrl> a ##
@@ -281,7 +283,7 @@ default_border pixel $i3-wm.window.border.size
 default_floating_border pixel $i3-wm.floatingwindow.border.size
 
 # Specify the distance between windows in pixels. (i3-gaps)
-set_from_resource $i3-wm.gaps.inner.size i3-wm.gaps.inner.size 5
+set_from_resource $i3-wm.gaps.inner.size i3-wm.gaps.inner.size 10
 set_from_resource $i3-wm.gaps.outer.size i3-wm.gaps.outer.size 0
 gaps inner $i3-wm.gaps.inner.size
 gaps outer $i3-wm.gaps.outer.size
@@ -329,8 +331,8 @@ popup_during_fullscreen smart
 focus_follows_mouse no
 
 # Create variables from Xresources for i3bars's look.
-set_from_resource $i3-wm.bar.background.color i3-wm.bar.background.color "#002b36"
-set_from_resource $i3-wm.bar.statusline.color i3-wm.bar.statusline.color "#93a1a1"
+set_from_resource $i3-wm.bar.background.color i3-wm.bar.background.color "#000000"
+set_from_resource $i3-wm.bar.statusline.color i3-wm.bar.statusline.color "#000000"
 set_from_resource $i3-wm.bar.separator.color i3-wm.bar.separator.color "#268bd2"
 
 set_from_resource $i3-wm.bar.workspace.focused.border.color i3-wm.bar.workspace.focused.border.color "#073642"
@@ -353,7 +355,7 @@ set_from_resource $i3-wm.bar.workspace.urgent.text.color i3-wm.bar.workspace.urg
 set_from_resource $i3-wm.font i3-wm.font "pango:Source Code Pro Medium 13"
 font $i3-wm.font
 
-set_from_resource $i3-wm.bar.position i3-wm.bar.position bottom
+set_from_resource $i3-wm.bar.position i3-wm.bar.position top
 set_from_resource $i3-wm.bar.font i3-wm.bar.font "pango:Source Code Pro Medium 13, Material Design Icons 13"
 set_from_resource $i3-wm.bar.separator i3-wm.bar.separator " "
 set_from_resource $i3-wm.bar.trayoutput i3-wm.bar.trayoutput none
@@ -364,8 +366,8 @@ set_from_resource $i3-wm.i3xrocks.config i3-wm.i3xrocks.config "/etc/regolith/i3
 
 # The bar configuration
 bar {
-  position $i3-wm.bar.position
-  font $i3-wm.bar.font
+  position top #$i3-wm.bar.position
+  font "pango:Fira Code Medium 12" #$i3-wm.bar.font
   separator_symbol $i3-wm.bar.separator
   status_command i3xrocks -c $i3-wm.i3xrocks.config
   tray_output $i3-wm.bar.trayoutput
@@ -397,3 +399,5 @@ exec --no-startup-id /usr/bin/regolith-ftue
 
 # Hide the mouse pointer if unused for a duration
 exec --no-startup-id /usr/bin/unclutter -b
+
+exec --no-startup-id /home/griff/Git/i3-alternating-layout/alternating_layouts.py

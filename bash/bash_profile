@@ -58,6 +58,8 @@ alias bs='docker run --rm -it -p 3000:3000 sendwithus/battlesnake-server'
 
 alias dockerkill='docker rm -fv $(docker ps -aq)'
 
+alias clear='[ $[$RANDOM % 10] = 0 ] && sl; clear || clear'
+
 # Vim Aliases
 
 if [ -f ~/nvim.appimage ]; then
@@ -70,6 +72,9 @@ alias  v='nvim'
 alias  vimrc='nvim ~/Git/dotfiles/init.vim'
 alias  bashrc='nvim ~/Git/dotfiles/bash_profile'
 alias  gitconfig='nvim ~/Git/dotfiles/gitconfig'
+
+alias  usb='sudo mount /dev/sdb1 /media/usb'
+alias  vpn='sudo -ib openvpn ~/.client.ovpn'
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .bash_profile.pysave
@@ -102,24 +107,24 @@ parse_git_branch_or_tag() {
 export ANDROID_HOME="/Users/griffinledingham/Library/Android/sdk/"
 export PGDATA="/Users/griffinledingham/pgdata/"
 
-case "$TERM" in
-xterm*|rxvt*)
-    PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
-    show_command_in_title_bar()
-    {
-        case "$BASH_COMMAND" in
-            *\033]0*)
-                ;;
-            *)
-                echo -ne "\033]0;${BASH_COMMAND} - ${PWD##*/}\007"
-                ;;
-        esac
-    }
-    trap show_command_in_title_bar DEBUG
-    ;;
-*)
-    ;;
-esac
+#case "$TERM" in
+#xterm*|rxvt*)
+#    PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
+#    show_command_in_title_bar()
+#    {
+#        case "$BASH_COMMAND" in
+#            *\033]0*)
+#                ;;
+#            *)
+#                echo -ne "\033]0;${BASH_COMMAND} - ${PWD##*/}\007"
+#                ;;
+#        esac
+#    }
+#    trap show_command_in_title_bar DEBUG
+#    ;;
+#*)
+#    ;;
+#esac
 
 #export TERM="ansi"
 export TERM=screen-256color

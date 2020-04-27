@@ -322,6 +322,11 @@
   },
 
   "autoDarkMode.lightTheme":"Solarized Light",
-  "autoDarkMode.darkTheme":"One Dark Pro Vivid"
+  "autoDarkMode.darkTheme": "One Dark Pro Vivid",
+  "customizeUI.font.monospace": "Fira Code",
+  "customizeUI.font.regular": "Fire Code",
+  "gitlens.hovers.currentLine.over": "line",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
   // "editor.formatOnType": true
 }
