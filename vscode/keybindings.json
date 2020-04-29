@@ -173,7 +173,12 @@
         "when": "inQuickOpen && inRecentFilesPicker"
     },
     {
-        "key": "shift+ctrl+r",
+        "key": "ctrl+shift+r",
         "command": "editor.action.peekDefinition"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-extension.vim_ctrl+f",
+        "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl && vim.mode != 'Insert'"
     }
 ]

@@ -91,7 +91,7 @@ bindsym $mod+BackSpace split toggle
 
 ## Modify // Window Fullscreen Toggle // <Super> f ##
 #bindsym Ctrl+Shift+f fullscreen toggle
-bindsym Ctrl+f fullscreen toggle
+bindsym $alt+f fullscreen toggle
 
 ## Modify // Window Floating Toggle // <Super><Shift> f ##
 bindsym $alt+t floating toggle
