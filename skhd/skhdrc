@@ -1,16 +1,16 @@
 # open iTerm
- alt - return : open -a /Applications/Kitty.app
+alt - return : open -a /Applications/Kitty.app
 ctrl + alt + cmd + shift - s : open -a /Applications/Kitty.app
 
 # open Brave
-ctrl + alt + cmd + shift - d : open -a '/Applications/Brave Browser.app'
-cmd + shift - return : open -a '/Applications/Brave Browser.app'
+#ctrl + alt + cmd + shift - f : open -a '/Applications/Brave Browser.app'
+#cmd + shift - return : open -a '/Applications/Brave Browser.app'
 #cmd + shift - return : open -a '/Applications/Chromium.app'
+ctrl + alt + cmd + shift - f : open -a '/Applications/Google Chrome Canary.app'
+cmd + shift - return : open -a '/Applications/Google Chrome Canary.app'
 
-# alt + shift - return : open -a '/Applications/PhpStorm.app'
-ctrl + alt + cmd + shift - f: open -a '/Applications/Visual Studio Code.app'
+ctrl + alt + cmd + shift - d: open -a '/Applications/Visual Studio Code.app'
 alt + shift - return: open -a '/Applications/Visual Studio Code.app'
-#alt + shift - return : open -a '/Applications/Atom.app'
 
 cmd + ctrl - return : open -a '/Applications/Xcode.app'
 

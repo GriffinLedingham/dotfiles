@@ -134,3 +134,6 @@ esac
 
 #export TERM="ansi"
 export TERM=screen-256color
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
