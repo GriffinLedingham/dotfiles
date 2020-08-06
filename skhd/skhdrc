@@ -1,17 +1,16 @@
-# open iTerm
+# open Kitty
 alt - return : open -a /Applications/Kitty.app
 ctrl + alt + cmd + shift - s : open -a /Applications/Kitty.app
 
-# open Brave
-#ctrl + alt + cmd + shift - f : open -a '/Applications/Brave Browser.app'
-#cmd + shift - return : open -a '/Applications/Brave Browser.app'
-#cmd + shift - return : open -a '/Applications/Chromium.app'
-ctrl + alt + cmd + shift - f : open -a '/Applications/Google Chrome Canary.app'
-cmd + shift - return : open -a '/Applications/Google Chrome Canary.app'
+# open Chrome
+ctrl + alt + cmd + shift - f : open -a '/Applications/Google Chrome.app'
+cmd + shift - return : open -a '/Applications/Google Chrome.app'
 
+# open VSC
 ctrl + alt + cmd + shift - d: open -a '/Applications/Visual Studio Code.app'
 alt + shift - return: open -a '/Applications/Visual Studio Code.app'
 
+# open XCode
 cmd + ctrl - return : open -a '/Applications/Xcode.app'
 
 # close focused window
