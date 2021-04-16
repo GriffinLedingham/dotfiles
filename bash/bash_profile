@@ -22,9 +22,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-### Command Line Status
-source ~/.bash/git-prompt
-
 export PS1='\[\033[38;5;13m\]\u\[$(tput sgr0)\]\[\033[38;5;9m\]$(parse_git_branch_or_tag)\[$(tput sgr0)\]\[\033[38;5;12m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]\\$ \[$(tput sgr0)\]'
 
 ### Added by the Heroku Toolbelt
@@ -44,12 +41,18 @@ alias skhdr='brew services restart skhd'
 #Dev Aliases
 alias  gs='grunt serve'
 
+alias smw='npm run servemw'
+alias spc='npm run servepc'
+alias svc='npm run servevc'
+alias szs='npm run servezs'
+
 #Kano Aliases
-alias  kano='cd ~/Kano/apps_mobile/apps/xwars'
+alias  kano='cd ~/Kano/apps_mobile'
 alias  kanossh='sh ~/.ssh/kano.sh'
 alias  ks='sh ~/.ssh/kano.sh'
 alias  kanod='sh ~/.kanohub_rsync_rem_to_loc.sh'
-alias  pika='ssh -i ~/pikalytics.pem ec2-user@34.197.205.97'
+#alias  pika='ssh -i ~/pikalytics.pem ec2-user@34.197.205.97'
+alias  pika='ssh -i ~/pikalytics.pem ec2-user@34.201.242.57'
 alias  rw='cd ~/Kano/Kanohub && kanod && remotely watch'
 alias  kh='cd ~/Kano/Kanohub/kano/apps'
 alias  ka='cd ~/Kano/apps/ && clear'
@@ -110,7 +113,8 @@ parse_git_branch_or_tag() {
   echo $OUT
 }
 
-export ANDROID_HOME="/Users/griffinledingham/Library/Android/sdk/"
+export ANDROID_HOME="/Users/griff/Library/Android/sdk"
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PGDATA="/Users/griffinledingham/pgdata/"
 
 case "$TERM" in
@@ -137,3 +141,9 @@ export TERM=screen-256color
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+export PATH="/usr/local/opt/php@7.2/bin:$PATH"
+export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude platforms/ --exclude build/'

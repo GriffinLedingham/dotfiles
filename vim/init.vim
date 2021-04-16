@@ -26,8 +26,9 @@ Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
 
 " Explorers
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+Plug '/usr/local/opt/fzf'
 
 " Syntax
 Plug 'othree/html5.vim', {'for': ['html']}
@@ -37,8 +38,8 @@ Plug 'StanAngeloff/php.vim', {'for': ['php']}
 Plug '2072/PHP-Indenting-for-VIm', {'for': ['php']}
 
 " Autocomplete
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'shawncplus/phpcomplete.vim'
-
 
 call plug#end()
 
@@ -90,7 +91,7 @@ vnoremap \ /\v
 au BufRead,BufNewFile *.css.php set filetype=css
 
 " Disable CtrlP Caching
-let g:ctrlp_user_command = 'ag %s -l -g  "" --ignore-dir=cached-copy/ --ignore-dir=plugins/ --ignore-dir=modules/ --ignore-dir=node_modules/ --ignore-dir=build/ --ignore-dir=public/ --ignore-dir=bin/ --ignore-dir=vendor/ --ignore-dir=error_logs/ --ignore-dir=scripts/ --ignore-dir=portal/ --ignore-dir=tracks/'
+" let g:ctrlp_user_command = 'ag %s -l -g  "" --ignore-dir=Kanohub/ --ignore-dir=node_modules/ --ignore-dir=build/ --ignore-dir=platforms/ --ignore-dir=www/ --ignore-dir=cached-copy/ --ignore-dir=plugins/ --ignore-dir=modules/ --ignore-dir=node_modules/ --ignore-dir=build/ --ignore-dir=public/ --ignore-dir=bin/ --ignore-dir=vendor/ --ignore-dir=error_logs/ --ignore-dir=portal/ --ignore-dir=tracks/ --ignore-dir=images/'
 let g:ctrlp_working_path_mode = 'a'
 
 " Trim White Space
@@ -144,7 +145,9 @@ colorscheme onedark
 
 " Keybinds
 " ===========================
-nnoremap <leader>p :CtrlP<CR>
+" nnoremap <leader>p :CtrlP<CR>
+nnoremap <leader>p :FZF<CR>
+
 nnoremap <leader>b :CtrlPBuffer<CR>
 
 nnoremap <leader>f <C-f>:call NoScrollAtEOF()<cr>

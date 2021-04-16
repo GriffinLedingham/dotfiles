@@ -13,7 +13,7 @@
     100
   ],
   "window.titleBarStyle": "custom",
-  "editor.fontFamily": "Fira Code",
+  "editor.fontFamily": "Dank Mono",
   "editor.fontLigatures": true,
   "workbench.editor.showTabs": false,
   "editor.lineNumbers": "relative",
@@ -279,11 +279,25 @@
           "args": []
         }
       ]
+    },
+    {
+      "before": [
+        "f"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "s",
+      ],
+      "commands": [
+        // {
+        //   "command": "findThenJump.initiate",
+        //   "args": []
+        // }
+      ]
     }
   ],
-  "window.zoomLevel": 0,
-  "workbench.colorTheme": "One Dark Pro",
-  "editor.fontSize": 14,
+  "editor.fontSize": 16,
   "editor.colorDecorators": false,
   "css.validate": false,
   "scss.validate": false,
@@ -315,13 +329,29 @@
   // "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.exclude": {
-    "**/public": true
+    // "**/public": true
   },
   "search.exclude": {
-    "**/public": true
+    // "**/public": true
   },
 
   "autoDarkMode.lightTheme":"Solarized Light",
-  "autoDarkMode.darkTheme":"One Dark Pro Vivid"
+  "autoDarkMode.darkTheme": "One Dark Pro",
+  "launch": {
+
+
+  },
+  "terminal.integrated.shell.osx": "/bin/bash",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  // "editor.fontWeight": "bold",
+  "terminal.integrated.fontSize": 16,
+  "terminal.external.osxExec": "kitty.app",
+  "workbench.colorTheme": "One Dark Pro",
+  "vim.easymotionMarkerBackgroundColor": "#22FF55",
+  "vim.easymotionMarkerForegroundColorOneChar": "#000",
+  "vim.easymotionIncSearchForegroundColor": "#000",
+  "vim.easymotionMarkerForegroundColorTwoCharFirst": "#000",
+  "vim.easymotionMarkerForegroundColorTwoCharSecond": "#777"
   // "editor.formatOnType": true
 }

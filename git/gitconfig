@@ -152,3 +152,5 @@
 	email = gcledingham@gmail.com
 [status]
 	submoduleSummary = true
+[http]
+	postBuffer = 1048576000
