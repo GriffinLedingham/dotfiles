@@ -1,0 +1,52 @@
+<application>
+  <component name="NodeJsLocalInterpreters">
+    <local-interpreter path="/usr/local/bin/node" />
+    <local-interpreter path="/usr/local/Cellar/node/15.2.1/bin/node" />
+  </component>
+  <component name="NotRoamableUiSettings">
+    <option name="fontFace" value="Dank Mono" />
+    <option name="fontScale" value="1.0" />
+    <option name="fontSize" value="14" />
+  </component>
+  <component name="ProjectPluginTrackerManager">
+    <trackers>
+      <map>
+        <entry key="1rG3FIxWS6pm8VhgO7YgSeD5EO1">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+      </map>
+    </trackers>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="FileTemplates.SelectedTemplate" value="HTML File" />
+    <property name="InstalledPluginsSearchHistory" value="search&#10;find file&#10;find fil&#10;find&#10;find fi" />
+    <property name="KEYMAP" value="preview&#10;new file&#10;undo&#10;edit source&#10;quick def" />
+    <property name="MarketplacePluginsSearchHistory" value="relative&#10;relative line number&#10;relative line&#10;rel&#10;material" />
+    <property name="NonModalCommitCustomization.IsApplied" value="true" />
+    <property name="PhpStorm.InitialConfiguration" value="true" />
+    <property name="PluginConfigurable.selectionTab" value="1" />
+    <property name="SettingsSearchHistory" value="redo&#10;search&#10;go to file&#10;find&#10;go to" />
+    <property name="appcds.runOnSecondStart" value="PS-211.7036.8-4d4672c76227037dd9fad1966f397d28896525bb363bc6b98bde0c3bfc53a2d5" />
+    <property name="ask.about.ctrl.y.shortcut.v2" value="true" />
+    <property name="evlsprt3.211" value="15" />
+    <property name="file.gist.reindex.count" value="1" />
+    <property name="fileTypeChangedCounter" value="1" />
+    <property name="fileTypeDetectors" value="com.intellij.database.vfs.DbStorageFileType$Detector:com.intellij.ide.scratch.ScratchFileServiceImpl$Detector:com.intellij.javascript.debugger.sourcemap.SourceMapFileType$MyFileTypeDetector:com.jetbrains.nodejs.util.NodeFileTypeDetector$JavaScriptFileTypeDetector:com.jetbrains.nodejs.util.NodeFileTypeDetector$TypeScriptFileTypeDetector" />
+    <property name="got.it.tooltip.cwm.invitation.notification" value="1" />
+    <property name="ide.memory.adjusted" value="true" />
+    <property name="ide.updates.previous.build.number" value="PS-211.7036.8" />
+    <property name="ideavim.statistics.timestamp" value="1618588964620" />
+    <property name="lastSeenTip" value="neue-AltInsertInEditor.html" />
+    <property name="lastTimeTipsWereShown" value="1618588500517" />
+    <property name="log.trace.categories" value="#com.jetbrains.rdserver.requests&#10;#com.jetbrains.rd.ide.document&#10;#com.jetbrains.rdserver.document&#10;#com.jetbrains.rdserver.editors&#10;#com.jetbrains.rdserver.actions" />
+    <property name="seenTips" value="neue-AltInsertInEditor.html" />
+    <property name="selected.color.option.type" value="PHP_HEREDOC_ID" />
+    <property name="tasks.pass.word.conversion.enforced" value="true" />
+    <property name="ts.lib.d.ts.version" value="4.2.2" />
+  </component>
+  <component name="ToolbarSettingsService">
+    <option name="NEW_TOOLBAR_SETTINGS" value="NO_TOOLBAR_NO_NAVBAR" />
+  </component>
+</application>

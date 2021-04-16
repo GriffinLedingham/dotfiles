@@ -1,0 +1,59 @@
+<application>
+  <component name="VimHistorySettings">
+    <history>
+      <history-cmd>
+        <entry encoding="base64">TkVSRFRyZWVUb2dnbGU=</entry>
+        <entry encoding="base64">Q3RybFBCdWZmZXI=</entry>
+        <entry encoding="base64">RlpG</entry>
+        <entry encoding="base64">dnNw</entry>
+        <entry encoding="base64">cQ==</entry>
+        <entry encoding="base64">QWchIHJhaWQ=</entry>
+      </history-cmd>
+    </history>
+  </component>
+  <component name="VimMarksSettings">
+    <globalmarks />
+    <filemarks>
+      <file name="$USER_HOME$/Kano/apps/xwars/application/helpers/Vanity/VanityManager.php" timestamp="1618596921197">
+        <mark key="'" line="156" column="30" />
+      </file>
+      <file name="$USER_HOME$/Kano/apps/xwars/application/helpers/raidboss_helper.php" timestamp="1618595934587">
+        <mark key="'" line="76" column="61" />
+        <mark key="[" line="87" column="55" />
+        <mark key="]" line="87" column="55" />
+        <mark key="." line="87" column="55" />
+      </file>
+      <file name="/" timestamp="1618591137588">
+        <mark key="[" line="0" column="0" />
+      </file>
+    </filemarks>
+    <jumps>
+      <jump line="36" column="8" filename="$USER_HOME$/Kano/apps/xwars/application/helpers/raidboss_helper.php" />
+      <jump line="76" column="61" filename="$USER_HOME$/Kano/apps/xwars/application/helpers/raidboss_helper.php" />
+      <jump line="69" column="66" filename="$USER_HOME$/Kano/apps/xwars/application/helpers/raidboss_helper.php" />
+      <jump line="156" column="30" filename="$USER_HOME$/Kano/apps/xwars/application/helpers/Vanity/VanityManager.php" />
+    </jumps>
+  </component>
+  <component name="VimRegisterSettings">
+    <registers>
+      <register name="&quot;" type="4">
+        <text encoding="base64">cw==</text>
+      </register>
+      <register name=":" type="4">
+        <text encoding="base64">cQ==</text>
+      </register>
+      <register name="*" type="4">
+        <text encoding="base64">cw==</text>
+      </register>
+      <register name="-" type="4">
+        <text encoding="base64">cw==</text>
+      </register>
+    </registers>
+  </component>
+  <component name="VimSearchSettings">
+    <search>
+      <last-dir encoding="base64">MQ==</last-dir>
+      <show-last encoding="base64">dHJ1ZQ==</show-last>
+    </search>
+  </component>
+</application>
