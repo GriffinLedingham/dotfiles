@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
 #bar settings
 yabai -m config status_bar                   on
 yabai -m config status_bar_text_font         "Fira Code:Regular:12.0"
@@ -26,6 +29,8 @@ yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        1.0
 yabai -m config split_ratio                  0.50
 yabai -m config auto_balance                 off
+yabai -m config window_animation_duration    0.0
+
 
 # general space settings
 yabai -m config layout                       bsp
@@ -36,5 +41,14 @@ yabai -m config right_padding                10
 yabai -m config window_gap                   10
 
 yabai -m config mouse_follows_focus off
+
+yabai -m rule --add app="iTerm" space=1
+yr app="iTerm" space=1
+yabai -m rule --add app="Slack" space=2
+yr app="Slack" space=2
+yabai -m rule --add app="Code" space=3
+yr app="Code" space=3
+yabai -m rule --add app="Arc" space=4
+yr app="Arc" space=4
 
 echo "yabai configuration loaded.."

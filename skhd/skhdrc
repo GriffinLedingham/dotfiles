@@ -1,20 +1,35 @@
 # open Kitty
-alt - return : open -a /Applications/Kitty.app
-ctrl + alt + cmd + shift - s : open -a /Applications/Kitty.app
+#alt - return : open -a /Applications/Kitty.app
+#ctrl + alt + cmd + shift - s : open -a /Applications/Kitty.app
+ctrl - 1 : open -a /Applications/iTerm.app
+alt - return : open -a /Applications/iTerm.app
+ctrl + alt + cmd + shift - s : open -a /Applications/iTerm.app
 
 # open Chrome
-ctrl + alt + cmd + shift - f : open -a '/Applications/Google Chrome.app'
-cmd + shift - return : open -a '/Applications/Google Chrome.app'
+#ctrl - 4 : open -a '/Applications/Google Chrome.app'
+#ctrl + alt + cmd + shift - f : open -a '/Applications/Google Chrome.app'
+#cmd + shift - return : open -a '/Applications/Google Chrome.app'
+ctrl - 4 : open -a '/Applications/Arc.app'
+ctrl + alt + cmd + shift - f : open -a '/Applications/Arc.app'
+cmd + shift - return : open -a '/Applications/Arc.app'
 
 # open VSC
+#ctrl - 3: open -a '/Applications/Visual Studio Code OLD.app'
+#ctrl + alt + cmd + shift - d: open -a '/Applications/Visual Studio Code OLD.app'
+#alt + shift - return: open -a '/Applications/Visual Studio Code OLD.app'
+ctrl - 3: open -a '/Applications/Visual Studio Code.app'
 ctrl + alt + cmd + shift - d: open -a '/Applications/Visual Studio Code.app'
 alt + shift - return: open -a '/Applications/Visual Studio Code.app'
+
+ctrl - 2 : open -a '/Applications/Slack.app'
 
 # open XCode
 cmd + ctrl - return : open -a '/Applications/Xcode.app'
 
+ctrl - 5 : open -a '/Applications/Discord.app'
+
 # close focused window
-alt - w : chunkc tiling::window --close
+#alt - w : chunkc tiling::window --close
 
 # focus window
 alt - h : yabai -m window --focus west
@@ -81,3 +96,10 @@ ctrl - 1 : yabai -m space --focus 1
 ctrl - 2 : yabai -m space --focus 2
 ctrl - 3 : yabai -m space --focus 3
 ctrl - 4 : yabai -m space --focus 4
+#
+## prevents skhd from monitoring events for listed processes.
+
+.blacklist [
+    "world of warcraft"
+    "wow"
+]
