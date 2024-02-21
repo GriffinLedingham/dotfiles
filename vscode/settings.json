@@ -1,35 +1,26 @@
 // Place your settings in this file to overwrite the default settings
 {
+  "debug.javascript.autoAttachFilter": "onlyWithFlag",
   "files.trimTrailingWhitespace": true,
-  "terminal.integrated.shellArgs.osx": [
-    "-l"
-  ],
+  "terminal.integrated.shellArgs.osx": ["-l"],
   "window.openFilesInNewWindow": "off",
-  "workbench.activityBar.visible": false,
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
+  "workbench.editor.enablePreview": true,
   "explorer.openEditors.visible": 0,
-  "editor.rulers": [
-    100
-  ],
+  "editor.rulers": [100],
   "window.titleBarStyle": "custom",
-  "editor.fontFamily": "Dank Mono",
   "editor.fontLigatures": true,
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": "single",
   "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "editor.renderLineHighlight": "gutter",
-  // "emmet.excludeLanguages": [
-  //     "php",
-  //     "css"
-  //   ],
   "workbench.colorCustomizations": {
     "scrollbar.shadow": "#FFF0",
     "statusBar.background": "#4f87ff",
     "statusBar.noFolderBackground": "#29D398",
     "statusBar.debuggingBackground": "#29D398",
-    "statusBar.foreground": "#FFFFFF",
-    // "titleBar.activeBackground": "#272C35"//"#FDF6E2" // change this color!
+    "statusBar.foreground": "#FFFFFF"
   },
   "vim.easymotion": true,
   "vim.sneak": true,
@@ -37,89 +28,46 @@
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
   "vim.leader": "<space>",
-  // "vim.statusBarColorControl": true,
-  // "vim.statusBarColors.normal": ["#29D398", "#343c3c"],
-  // "vim.statusBarColors.insert": ["#26BBCF", "#343c3c"],
-  // "vim.statusBarColors.visual": ["#EE628B", "#343c3c"],
-  // "vim.statusBarColors.visualline": ["#EE628B", "#343c3c"],
   "vim.insertModeKeyBindings": [
     {
-      "before": [
-        "j",
-        "k"
-      ],
-      "after": [
-        "<Esc>",
-        "l"
-      ]
+      "before": ["j", "k"],
+      "after": ["<Esc>", "l"]
     }
   ],
   "vim.visualModeKeyBindings": [
     {
-      "before": [
-        "W"
-      ],
-      "after": [
-        "b"
-      ]
+      "before": ["W"],
+      "after": ["b"]
     },
     {
-      "before": [
-        "!"
-      ],
-      "after": [
-        "^"
-      ]
+      "before": ["!"],
+      "after": ["^"]
     },
     {
-      "before": [
-        "tab"
-      ],
-      "commands": [
-        "editor.action.indentLines"
-      ]
+      "before": ["tab"],
+      "commands": ["editor.action.indentLines"]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "tab"
-      ],
-      "commands": [
-        "editor.action.indentLines"
-      ]
+      "before": ["tab"],
+      "commands": ["editor.action.indentLines"]
     },
     {
-      "before": [
-        "W"
-      ],
-      "after": [
-        "b"
-      ]
+      "before": ["W"],
+      "after": ["b"]
     },
     {
-      "before": [
-        "S"
-      ],
-      "after": [
-        "c",
-        "c"
-      ]
+      "before": ["S"],
+      "after": ["c", "c"]
     },
     {
-      "before": [
-        "!"
-      ],
-      "after": [
-        "^"
-      ]
+      "before": ["!"],
+      "after": ["^"]
     },
     {
-      "before": [
-        "<leader>",
-        "q"
-      ],
+      "before": ["<leader>", "q"],
       "commands": [
         {
           "command": "workbench.action.closeEditorsInGroup"
@@ -127,10 +75,7 @@
       ]
     },
     {
-      "before": [
-        "<leader>",
-        "`"
-      ],
+      "before": ["<leader>", "`"],
       "after": [],
       "commands": [
         {
@@ -139,10 +84,7 @@
       ]
     },
     {
-      "before": [
-        "<leader>",
-        "\\"
-      ],
+      "before": ["<leader>", "\\"],
       "after": [],
       "commands": [
         {
@@ -151,10 +93,7 @@
       ]
     },
     {
-      "before": [
-        "<leader>",
-        "]"
-      ],
+      "before": ["<leader>", "]"],
       "after": [],
       "commands": [
         {
@@ -163,10 +102,7 @@
       ]
     },
     {
-      "before": [
-        "<leader>",
-        "-"
-      ],
+      "before": ["<leader>", "-"],
       "after": [],
       "commands": [
         {
@@ -175,10 +111,7 @@
       ]
     },
     {
-      "before": [
-        "<leader>",
-        "k"
-      ],
+      "before": ["<leader>", "k"],
       "after": [],
       "commands": [
         {
@@ -187,9 +120,7 @@
       ]
     },
     {
-      "before": [
-        "/"
-      ],
+      "before": ["/"],
       "after": [],
       "commands": [
         {
@@ -198,28 +129,15 @@
       ]
     },
     {
-      "before": [
-        "<leader>",
-        "f"
-      ],
-      "after": [
-        "<C-d>"
-      ]
+      "before": ["<leader>", "f"],
+      "after": ["<C-d>"]
     },
     {
-      "before": [
-        "<leader>",
-        "d"
-      ],
-      "after": [
-        "<C-u>"
-      ]
+      "before": ["<leader>", "d"],
+      "after": ["<C-u>"]
     },
     {
-      "before": [
-        "<leader>",
-        "p"
-      ],
+      "before": ["<leader>", "p"],
       "after": [],
       "commands": [
         {
@@ -229,10 +147,7 @@
       ]
     },
     {
-      "before": [
-        "<leader>",
-        "l"
-      ],
+      "before": ["<leader>", "l"],
       "after": [],
       "commands": [
         {
@@ -242,10 +157,7 @@
       ]
     },
     {
-      "before": [
-        "<leader>",
-        "h"
-      ],
+      "before": ["<leader>", "h"],
       "after": [],
       "commands": [
         {
@@ -255,10 +167,7 @@
       ]
     },
     {
-      "before": [
-        "<leader>",
-        "j"
-      ],
+      "before": ["<leader>", "j"],
       "after": [],
       "commands": [
         {
@@ -268,10 +177,7 @@
       ]
     },
     {
-      "before": [
-        "<leader>",
-        "k"
-      ],
+      "before": ["<leader>", "k"],
       "after": [],
       "commands": [
         {
@@ -281,14 +187,8 @@
       ]
     },
     {
-      "before": [
-        "f"
-      ],
-      "after": [
-        "<leader>",
-        "<leader>",
-        "s",
-      ],
+      "before": ["f"],
+      "after": ["<leader>", "<leader>", "s"],
       "commands": [
         // {
         //   "command": "findThenJump.initiate",
@@ -303,14 +203,11 @@
   "scss.validate": false,
   "editor.cursorBlinking": "solid",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "emmet.showAbbreviationSuggestions": false,
   "typescript.suggest.completeFunctionCalls": true,
   "vim.handleKeys": {
     "<C-d>": true
   },
   "javascript.implicitProjectConfig.checkJs": true,
-  "emmet.optimizeStylesheetParsing": false,
-  "emmet.showExpandedAbbreviation": "never",
   "javascript.validate.enable": false,
   "editor.renderWhitespace": "none",
   "files.associations": {
@@ -319,14 +216,6 @@
   "workbench.sideBar.location": "left",
   "editor.wordWrapColumn": 100,
   "files.autoSaveDelay": 100,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[php]": {
-    "editor.formatOnSave": false
-  },
-  "vsicons.dontShowNewVersionMessage": true,
-  // "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.exclude": {
     // "**/public": true
@@ -334,17 +223,10 @@
   "search.exclude": {
     // "**/public": true
   },
-
-  "autoDarkMode.lightTheme":"Solarized Light",
-  "autoDarkMode.darkTheme": "One Dark Pro",
-  "launch": {
-
-
-  },
+  "launch": {},
   "terminal.integrated.shell.osx": "/bin/bash",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
-  // "editor.fontWeight": "bold",
   "terminal.integrated.fontSize": 16,
   "terminal.external.osxExec": "kitty.app",
   "workbench.colorTheme": "One Dark Pro",
@@ -352,6 +234,32 @@
   "vim.easymotionMarkerForegroundColorOneChar": "#000",
   "vim.easymotionIncSearchForegroundColor": "#000",
   "vim.easymotionMarkerForegroundColorTwoCharFirst": "#000",
-  "vim.easymotionMarkerForegroundColorTwoCharSecond": "#777"
-  // "editor.formatOnType": true
+  "vim.easymotionMarkerForegroundColorTwoCharSecond": "#777",
+  "editor.inlineSuggest.enabled": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": true,
+    "markdown": false
+  },
+  "extensions.ignoreRecommendations": true,
+  "update.mode": "manual",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "editor.formatOnSave": true,
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredLightColorTheme": "Solarized Light",
+  "workbench.preferredHighContrastLightColorTheme": "Solarized Light",
+  "workbench.preferredHighContrastColorTheme": "One Dark Pro",
+  "workbench.preferredDarkColorTheme": "One Dark Pro",
+  "editor.tabSize": 2,
+  "colorize.languages": ["css", "typescript"],
+  "workbench.activityBar.location": "hidden",
+  "typescript.tsserver.maxTsServerMemory": 3999,
+  "explorer.compactFolders": false,
+  "workbench.tree.enableStickyScroll": false
 }
