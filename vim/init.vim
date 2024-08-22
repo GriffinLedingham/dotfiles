@@ -19,7 +19,8 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sleuth'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " GUI
 Plug 'ervandew/supertab'
@@ -28,7 +29,12 @@ Plug 'airblade/vim-gitgutter'
 " Explorers
 " Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-Plug '/usr/local/opt/fzf'
+" Plug '/usr/local/opt/fzf'
+" Plug '/Users/griffin/homebrew/bin/fzf'
+Plug 'junegunn/fzf', {'dir': '/usr/local/opt/fzf', 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
+
 
 " Syntax
 Plug 'othree/html5.vim', {'for': ['html']}
@@ -40,6 +46,8 @@ Plug '2072/PHP-Indenting-for-VIm', {'for': ['php']}
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'shawncplus/phpcomplete.vim'
+
+Plug 'github/copilot.vim', {'branch': 'release'}
 
 call plug#end()
 
@@ -146,12 +154,13 @@ colorscheme onedark
 " Keybinds
 " ===========================
 " nnoremap <leader>p :CtrlP<CR>
-nnoremap <leader>p :FZF<CR>
+nnoremap <leader>p :FzfPreviewProjectFilesRpc<CR>
 
 nnoremap <leader>b :CtrlPBuffer<CR>
 
 nnoremap <leader>f <C-f>:call NoScrollAtEOF()<cr>
 nnoremap <leader>d <C-b>
+nnoremap <C-a> :call vm#commands#find_all(0, 1)<CR>
 
 nnoremap <leader>q :q<CR>
 nnoremap <leader>s  :Ag!<Space>
@@ -166,9 +175,9 @@ if has('nvim')
   nmap <bs> <c-w>h
 endif
 " nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
 
 let g:multi_cursor_start_word_key      = '<C-j>'
 let g:multi_cursor_next_key            = '<C-j>'
@@ -239,3 +248,6 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
+
+autocmd BufWritePost .vimrc source %
+

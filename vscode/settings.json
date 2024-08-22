@@ -17,10 +17,11 @@
   "editor.renderLineHighlight": "gutter",
   "workbench.colorCustomizations": {
     "scrollbar.shadow": "#FFF0",
-    "statusBar.background": "#4f87ff",
-    "statusBar.noFolderBackground": "#29D398",
-    "statusBar.debuggingBackground": "#29D398",
-    "statusBar.foreground": "#FFFFFF"
+    "statusBar.background": "#005f5f",
+    "statusBar.noFolderBackground": "#005f5f",
+    "statusBar.debuggingBackground": "#005f5f",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffffff"
   },
   "vim.easymotion": true,
   "vim.sneak": true,
@@ -207,7 +208,6 @@
   "vim.handleKeys": {
     "<C-d>": true
   },
-  "javascript.implicitProjectConfig.checkJs": true,
   "javascript.validate.enable": false,
   "editor.renderWhitespace": "none",
   "files.associations": {
@@ -239,9 +239,9 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "github.copilot.enable": {
     "*": true,
-    "yaml": false,
+    "yaml": true,
     "plaintext": true,
-    "markdown": false
+    "markdown": true
   },
   "extensions.ignoreRecommendations": true,
   "update.mode": "manual",
@@ -257,9 +257,15 @@
   "workbench.preferredHighContrastColorTheme": "One Dark Pro",
   "workbench.preferredDarkColorTheme": "One Dark Pro",
   "editor.tabSize": 2,
-  "colorize.languages": ["css", "typescript"],
   "workbench.activityBar.location": "hidden",
-  "typescript.tsserver.maxTsServerMemory": 3999,
+  "typescript.tsserver.maxTsServerMemory": 4000,
   "explorer.compactFolders": false,
-  "workbench.tree.enableStickyScroll": false
+  "workbench.tree.enableStickyScroll": false,
+  "accessibility.dimUnfocused.opacity": 0.6,
+  "accessibility.dimUnfocused.enabled": true,
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "javascript.format.enable": false,
+  "typescript.surveys.enabled": false,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "eslint.format.enable": true
 }

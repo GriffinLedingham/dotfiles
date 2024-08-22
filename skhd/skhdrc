@@ -1,9 +1,10 @@
 # open Kitty
-#alt - return : open -a /Applications/Kitty.app
-#ctrl + alt + cmd + shift - s : open -a /Applications/Kitty.app
-ctrl - 1 : open -a /Applications/iTerm.app
-alt - return : open -a /Applications/iTerm.app
-ctrl + alt + cmd + shift - s : open -a /Applications/iTerm.app
+alt - return : open -a /Applications/Kitty.app
+ctrl + alt + cmd + shift - s : open -a /Applications/Kitty.app
+ctrl - 1 : open -a /Applications/Kitty.app
+#ctrl - 1 : open -a /Applications/iTerm.app
+#alt - return : open -a /Applications/iTerm.app
+#ctrl + alt + cmd + shift - s : open -a /Applications/iTerm.app
 
 # open Chrome
 #ctrl - 4 : open -a '/Applications/Google Chrome.app'
@@ -24,9 +25,9 @@ alt + shift - return: open -a '/Applications/Visual Studio Code.app'
 ctrl - 2 : open -a '/Applications/Slack.app'
 
 # open XCode
-cmd + ctrl - return : open -a '/Applications/Xcode.app'
+#cmd + ctrl - return : open -a '/Applications/Xcode.app'
 
-ctrl - 5 : open -a '/Applications/Discord.app'
+#ctrl - 5 : open -a '/Applications/Discord.app'
 
 # close focused window
 #alt - w : chunkc tiling::window --close

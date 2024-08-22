@@ -44,11 +44,23 @@ yabai -m config mouse_follows_focus off
 
 yabai -m rule --add app="iTerm" space=1
 yr app="iTerm" space=1
+yabai -m rule --add app="kitty" space=1
+yr app="kitty" space=1
 yabai -m rule --add app="Slack" space=2
 yr app="Slack" space=2
+yabai -m rule --add app="Messages" space=2
+yr app="Messages" space=2
 yabai -m rule --add app="Code" space=3
 yr app="Code" space=3
 yabai -m rule --add app="Arc" space=4
 yr app="Arc" space=4
+yabai -m rule --add app="Spotify" space=5
+yr app="Spotify" space=5
+yabai -m rule --add app="Linear" space=6
+yr app="Linear" space=6
+yabai -m rule --add app="Battle.net" space=7
+yr app="Battle.net" space=7
+yabai -m rule --add app="World of Warcraft" space=8
+yr app="World of Warcraft" space=8
 
 echo "yabai configuration loaded.."
