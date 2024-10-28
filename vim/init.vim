@@ -31,9 +31,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 " Plug '/usr/local/opt/fzf'
 " Plug '/Users/griffin/homebrew/bin/fzf'
-Plug 'junegunn/fzf', {'dir': '/usr/local/opt/fzf', 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
+" Plug 'junegunn/fzf', {'dir': '/usr/local/opt/fzf', 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
+" Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 
 
 " Syntax
@@ -108,7 +108,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Airline
 " ===============================
 let g:airline_powerline_fonts = 1
-"let g:airline_theme = 'onedark'
+let g:airline_theme = 'onedark'
 "let g:airline_theme = 'solarized'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
