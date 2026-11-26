@@ -216,9 +216,8 @@
   "workbench.sideBar.location": "left",
   "editor.wordWrapColumn": 100,
   "files.autoSaveDelay": 100,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.exclude": {
-    // "**/public": true
+    "**/node_modules": true
   },
   "search.exclude": {
     // "**/public": true
@@ -267,5 +266,14 @@
   "javascript.format.enable": false,
   "typescript.surveys.enabled": false,
   "github.copilot.editor.enableAutoCompletions": true,
-  "eslint.format.enable": true
+  "explorer.excludeGitIgnore": true,
+
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "eslint.format.enable": true,
 }

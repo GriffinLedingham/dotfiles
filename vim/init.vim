@@ -1,7 +1,7 @@
 set encoding=utf-8
 set nocompatible
 
- set completeopt=menu,noinsert
+set completeopt=menu,noinsert
 
 
 " Plugged
@@ -25,6 +25,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " GUI
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
+Plug 'jake-stewart/multicursor.nvim'
 
 " Explorers
 " Plug 'ctrlpvim/ctrlp.vim'
@@ -183,8 +184,13 @@ let g:multi_cursor_start_word_key      = '<C-j>'
 let g:multi_cursor_next_key            = '<C-j>'
 
 
-noremap <S-W> b
-noremap ! ^
+"noremap <S-W> b
+nmap <S-W> b
+
+"vnoremap ! ^
+"nnoremap ! ^
+"noremap ! ^
+nmap ! ^
 
 nnoremap d "_d
 vnoremap d "_d
@@ -202,7 +208,7 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gd :Gdiff<CR>
 
 " Buffer
-nnoremap <leader>n :enew<CR>
+"nnoremap <leader>n :enew<CR>
 
 nnoremap <leader>\ :NERDTreeToggle<CR>
 

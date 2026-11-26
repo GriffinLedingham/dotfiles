@@ -1,4 +1,5 @@
 return {
+  darkblack = 0xff000000,
   black = 0xff181819,
   white = 0xffe2e2e3,
   red = 0xfffc5d7c,
@@ -15,6 +16,11 @@ return {
     -- bg = 0xf02c2e34,
     bg = 0x00000000,
     border = 0xff2c2e34,
+  },
+  pill = {
+    bg = 0x59000000,
+    border = 0x33ffffff,
+    border_active = 0x99ffffff,
   },
   popup = {
     bg = 0xc02c2e34,

@@ -9,7 +9,7 @@ echo "Atom keymap.cson linked!";
 ln -sf "$my_dir"/atom/styles.less ~/.atom/styles.less;
 echo "Atom styles.less linked!";
 
-mkdir ~/.bash;
+mkdir -p ~/.bash;
 ln -sf "$my_dir"/bash/git-prompt ~/.bash/git-prompt;
 echo "bash git-prompt linked!";
 
@@ -25,9 +25,10 @@ echo "hyper.js linked!";
 ln -sf "$my_dir"/karabiner/karabiner.json  ~/.config/karabiner/karabiner.json;
 echo "Karabiner linked!";
 
+mkdir -p ~/.config/kitty;
 ln -sf "$my_dir"/kitty/kitty.conf  ~/.config/kitty/kitty.conf;
-ln -sf "$my_dir"/kitty/kitty-dark.conf  ~/.kitty-dark.conf;
-ln -sf "$my_dir"/kitty/kitty-light.conf  ~/.kitty-light.conf;
+ln -sf "$my_dir"/kitty/kitty-dark.conf  ~/.config/kitty/kitty-dark.conf;
+ln -sf "$my_dir"/kitty/kitty-light.conf  ~/.config/kitty/kitty-light.conf;
 echo "kitty linked!";
 
 ln -sf "$my_dir"/slate/slate  ~/.slate;
@@ -66,3 +67,12 @@ echo "ubersicht linked!";
 
 ln -sf "$my_dir"/yabai/yabairc  ~/.yabairc;
 echo "yabai linked!";
+
+sudo install -o root -g wheel -m 755 "$my_dir"/yabai/yabai-load-sa /usr/local/libexec/yabai-load-sa;
+echo "yabai-load-sa installed!";
+
+ln -sf "$my_dir"/zsh/zshrc  ~/.zshrc;
+echo "zshrc linked!";
+
+ln -sfn "$my_dir"/sketchybar  ~/.config/sketchybar;
+echo "sketchybar linked!";

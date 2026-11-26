@@ -2,8 +2,6 @@ local icons = require("icons")
 local colors = require("colors")
 local settings = require("settings")
 
--- Execute the event provider binary which provides the event "network_update"
--- for the network interface "en0", which is fired every 2.0 seconds.
 sbar.exec("killall network_load >/dev/null; $CONFIG_DIR/helpers/event_providers/network_load/bin/network_load en0 network_update 2.0")
 
 local popup_width = 250
@@ -44,6 +42,7 @@ local wifi_down = sbar.add("item", "widgets.wifi2", {
     string = icons.wifi.download,
   },
   label = {
+    padding_right = 10,
     font = {
       family = settings.font.numbers,
       style = settings.font.style_map["Bold"],
@@ -57,16 +56,19 @@ local wifi_down = sbar.add("item", "widgets.wifi2", {
 
 local wifi = sbar.add("item", "widgets.wifi.padding", {
   position = "right",
+  icon = {
+    string = icons.wifi.connected,
+    padding_left = 10,
+  },
   label = { drawing = false },
 })
 
--- Background around the item
 local wifi_bracket = sbar.add("bracket", "widgets.wifi.bracket", {
   wifi.name,
   wifi_up.name,
   wifi_down.name
 }, {
-  background = { color = colors.bg1 },
+  background = { color = colors.pill.bg },
   popup = { align = "center", height = 30 }
 })
 
@@ -173,7 +175,7 @@ wifi_up:subscribe("network_update", function(env)
   })
 end)
 
-wifi:subscribe({"wifi_change", "system_woke"}, function(env)
+wifi:subscribe({"forced", "wifi_change", "system_woke"}, function(env)
   sbar.exec("ipconfig getifaddr en0", function(ip)
     local connected = not (ip == "")
     wifi:set({

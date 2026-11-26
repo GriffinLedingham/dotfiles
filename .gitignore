@@ -1,2 +1,11 @@
 .DS_Store
 nvim.appimage
+
+# Never commit secrets
+*secrets*
+.secrets.zsh
+.env
+*.pem
+*.key
+id_rsa*
+id_ed25519*
