@@ -6,5 +6,11 @@ sbar.bar({
   height = 40,
   color = colors.bar.bg,
   padding_right = 2,
-  padding_left = 2,
-})
+  padding_left = 20,
+},
+  {
+    color = colors.darkblack,
+    height = 40,
+    width = 100,
+  }
+)

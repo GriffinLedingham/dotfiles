@@ -34,16 +34,37 @@ floating_modifier $mod
 
 hide_edge_borders smart
 
-## Launch // Terminal // <Super> Enter ##
-bindsym Shift+Ctrl+$alt+s exec wmctrl -F -a 'st' || exec /usr/bin/x-terminal-emulator -f "Fira Code:size=12"
-bindsym $alt+Return exec wmctrl -F -a 'st' || exec /usr/bin/x-terminal-emulator -f "Fira Code:size=12"
+set $term kitty
+set $editor cursor
+set $browser chromium
+
+set $output1 primary
+set $output2 DP-2
+set $output3 DP-3
+
+## Launch // Terminal // <Alt> Enter ##
+bindsym $alt+Return exec --no-startup-id i3-msg -q '[class="^kitty$"] focus' || $term
+bindsym Ctrl+$alt+$mod+Shift+s exec --no-startup-id i3-msg -q '[class="^kitty$"] focus' || $term
+bindsym Ctrl+1 exec --no-startup-id i3-msg -q '[class="^kitty$"] focus' || $term
+
+## Launch // Slack // <Ctrl> 2 ##
+bindsym Ctrl+2 exec --no-startup-id i3-msg -q '[class="^Slack$"] focus' || slack
+
+## Launch // Editor // <Alt><Shift> Enter ##
+bindsym Ctrl+3 exec --no-startup-id i3-msg -q '[class="^Cursor$"] focus' || $editor
+bindsym Ctrl+$alt+$mod+Shift+d exec --no-startup-id i3-msg -q '[class="^Cursor$"] focus' || $editor
+bindsym $alt+Shift+Return exec --no-startup-id i3-msg -q '[class="^Cursor$"] focus' || $editor
 
 ## Launch // Browser // <Super><Shift> Enter ##
-bindsym Ctrl+$alt+Shift+f exec wmctrl -a Chromium || gtk-launch $(xdg-settings get default-web-browser)
-bindsym Ctrl+Shift+Return exec wmctrl -a Chromium || gtk-launch $(xdg-settings get default-web-browser)
+bindsym Ctrl+4 exec --no-startup-id i3-msg -q '[class="^Chromium$"] focus' || $browser
+bindsym Ctrl+$alt+$mod+Shift+f exec --no-startup-id i3-msg -q '[class="^Chromium$"] focus' || $browser
+bindsym $mod+Shift+Return exec --no-startup-id i3-msg -q '[class="^Chromium$"] focus' || $browser
 
-bindsym Ctrl+$alt+Shift+d exec wmctrl -a VSCodium || codium
-bindsym $alt+Shift+Return exec wmctrl -a VSCodium || codium
+## Launch // Spotify // <Ctrl> 5 ##
+bindsym Ctrl+5 exec --no-startup-id i3-msg -q '[class="^Spotify$"] focus' || spotify
+
+## Launch // Antigravity // <Ctrl><Shift> Enter ##
+bindsym Ctrl+Shift+Return exec --no-startup-id i3-msg -q '[class="(?i)^antigravity"] focus' || antigravity
 
 set_from_resource $rofiTheme rofi.theme "regolith-theme"
 
@@ -61,23 +82,58 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-## Navigate // Relative Window // <Super> k j h l ##
+## Navigate // Relative Window // <Alt> h j k l ##
 bindsym $alt+h focus left
 bindsym $alt+j focus down
 bindsym $alt+k focus up
 bindsym $alt+l focus right
 
-## Modify // Window Position // <Super><Shift> ↑ ↓ ← → ##
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
+## Navigate // Next Window // <Alt> Tab ##
+bindsym $alt+Tab focus next
+bindsym $alt+Shift+Tab focus prev
 
-## Modify // Window Position // <Super><Shift> k j h l ##
-bindsym Shift+Left move left
-bindsym Shift+Down move down
-bindsym Shift+Up move up
-bindsym Shift+Right move right
+## Modify // Swap Window // <Alt><Shift> h j k l ##
+bindsym $alt+Shift+h mark --add _swap; focus left; swap container with mark _swap; [con_mark="^_swap$"] focus; unmark _swap
+bindsym $alt+Shift+j mark --add _swap; focus down; swap container with mark _swap; [con_mark="^_swap$"] focus; unmark _swap
+bindsym $alt+Shift+k mark --add _swap; focus up; swap container with mark _swap; [con_mark="^_swap$"] focus; unmark _swap
+bindsym $alt+Shift+l mark --add _swap; focus right; swap container with mark _swap; [con_mark="^_swap$"] focus; unmark _swap
+
+## Modify // Move Window // <Super><Ctrl> h j k l ##
+bindsym $mod+Ctrl+h move left
+bindsym $mod+Ctrl+j move down
+bindsym $mod+Ctrl+k move up
+bindsym $mod+Ctrl+l move right
+
+## Modify // Send Window to Display // <Ctrl><Alt> 1..3 ##
+bindsym Ctrl+$alt+1 move container to output $output1; focus output $output1
+bindsym Ctrl+$alt+2 move container to output $output2; focus output $output2
+bindsym Ctrl+$alt+3 move container to output $output3; focus output $output3
+
+## Resize // Grow Window Edge // <Alt><Shift> a s w d ##
+bindsym $alt+Shift+a resize grow left 10 px or 10 ppt
+bindsym $alt+Shift+s resize grow down 10 px or 10 ppt
+bindsym $alt+Shift+w resize grow up 10 px or 10 ppt
+bindsym $alt+Shift+d resize grow right 10 px or 10 ppt
+
+## Modify // Rotate Split // <Alt> r ##
+bindsym $alt+r layout toggle split
+
+## Modify // Toggle Gaps // <Alt> a ##
+bindsym $alt+a gaps inner current toggle 14
+
+## Modify // Float and Center // <Alt> t ##
+bindsym $alt+t floating toggle; resize set 50 ppt 50 ppt; move position center
+
+## Modify // Sticky Picture in Picture // <Alt> s ##
+bindsym $alt+s floating toggle; sticky toggle; resize set 20 ppt 20 ppt; move position 80 ppt 0 ppt
+
+## Navigate // New Workspace // <Super><Alt> n ##
+bindsym $mod+$alt+n exec --no-startup-id i3-msg workspace number "$(i3-msg -t get_workspaces | jq '[.[].num] as $used | first(range(1; 100) | select(. as $n | $used | index($n) | not))')"
+
+## Modify // Workspace Layout // <Ctrl><Alt> a s d ##
+bindsym Ctrl+$alt+a layout splith
+bindsym Ctrl+$alt+s layout tabbed
+bindsym Ctrl+$alt+d [workspace="__focused__"] floating enable
 
 ## Modify // Containing Workspace // <Super><Ctrl><Shift> ↑ ↓ ← → ##
 bindsym $mod+Ctrl+Shift+Left move workspace to output left
@@ -88,8 +144,8 @@ bindsym $mod+Ctrl+Shift+Right move workspace to output right
 ## Modify // Next Window Orientation // <Super> Backspace ##
 bindsym $mod+BackSpace split toggle
 
-## Modify // Window Fullscreen Toggle // <Super> f ##
-bindsym Ctrl+Shift+f fullscreen toggle
+## Modify // Window Fullscreen Toggle // <Ctrl> f ##
+bindsym Ctrl+f fullscreen toggle
 
 ## Modify // Window Floating Toggle // <Super><Shift> f ##
 bindsym $mod+Shift+f floating toggle
@@ -104,12 +160,7 @@ bindsym $mod+Shift+t focus mode_toggle
 ## Modify // Window Layout Mode // <Super> t ##
 bindsym $mod+t layout toggle tabbed splith splitv
 
-## Navigate // Workspace // <Super> 0..9 ##
-bindsym Ctrl+1 workspace number $ws1
-bindsym Ctrl+2 workspace number $ws2
-bindsym Ctrl+3 workspace number $ws3
-bindsym Ctrl+4 workspace number $ws4
-bindsym Ctrl+5 workspace number $ws5
+## Navigate // Workspace // <Ctrl> 6..9 ##
 bindsym Ctrl+6 workspace number $ws6
 bindsym Ctrl+7 workspace number $ws7
 bindsym Ctrl+8 workspace number $ws8
@@ -281,13 +332,20 @@ default_border pixel $i3-wm.window.border.size
 default_floating_border pixel $i3-wm.floatingwindow.border.size
 
 # Specify the distance between windows in pixels. (i3-gaps)
-set_from_resource $i3-wm.gaps.inner.size i3-wm.gaps.inner.size 5
+set_from_resource $i3-wm.gaps.inner.size i3-wm.gaps.inner.size 14
 set_from_resource $i3-wm.gaps.outer.size i3-wm.gaps.outer.size 0
 gaps inner $i3-wm.gaps.inner.size
 gaps outer $i3-wm.gaps.outer.size
 
-# Only enable gaps on a workspace when there is at least one container
-smart_gaps on
+mouse_warping none
+
+assign [class="^kitty$"] $ws1
+assign [class="^Slack$"] $ws2
+assign [class="^(Cursor|Code|dev.zed.Zed)$"] $ws3
+assign [class="^(Chromium|Brave-browser|zen)$"] $ws4
+assign [class="^TelegramDesktop$"] $ws5
+assign [class="(?i)^antigravity"] $ws6
+for_window [class="^Spotify$"] move container to workspace number $ws5
 
 # Create variables from Xresources for i3's look.
 set_from_resource $focused.color.border i3-wm.client.focused.color.border "#002b36"

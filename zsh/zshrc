@@ -1,47 +1,45 @@
-# Set the kitty theme based on the dark-mode stotus
-alias kdark='kitty @ set-colors -a ~/.kitty-dark.conf'
-alias klight='kitty @ set-colors -a ~/.kitty-light.conf'
-is_dark=$(dark-mode status)
-if [ "$is_dark" = "on" ];
-then
-  kdark
+cd;clear;
+
+export PATH=/opt/homebrew/bin:$PATH
+
+typeset -U path PATH
+
+alias kdark='kitty @ set-colors -a ~/.config/kitty/kitty-dark.conf'
+alias klight='kitty @ set-colors -a ~/.config/kitty/kitty-light.conf'
+alias yabr='yabai --restart-service'
+
+if [[ $TERM == "xterm-kitty" ]]; then
+  # Set the kitty theme based on the dark-mode stotus
+    is_dark=$(dark-mode status)
+  if [ "$is_dark" = "on" ];
+  then
+    kdark
+  else
+    klight
+  fi
 else
-  klight
+  :
 fi
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+yabai_sa_state="$(pgrep -x Dock) $(yabai --version 2>/dev/null)"
+if [[ -x /usr/local/libexec/yabai-load-sa && "$(cat $TMPDIR/yabai-sa-state 2>/dev/null)" != "$yabai_sa_state" ]]; then
+  echo "Loading yabai scripting addition"
+  sudo /usr/local/libexec/yabai-load-sa
+  if yabai -m space --create && yabai -m space --destroy last; then
+    while (( $(yabai -m query --spaces | jq length) < 9 )); do
+      yabai -m space --create
+    done
+    yabai --restart-service
+    echo "$yabai_sa_state" > $TMPDIR/yabai-sa-state
+  fi
 fi
+unset yabai_sa_state
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/Users/griffin//homebrew/bin:$PATH
+export PATH=/Users/griffin/homebrew/bin:$PATH
 export PATH=$PATH:/Users/griffin/.foundry/bin
-export PATH=./bin:${PATH}
 export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
-
-# Include local node_modules in path
-export NODE_PATH=node_modules/
-
-# Android Studio
-export ANDROID_HOME="/Users/griff/Library/Android/sdk/"
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-
-export ANDROID_HOME=~/Library/Android/sdk && export PATH=${PATH}:${ANDROID_HOME}/tools && export PATH=${PATH}:${ANDROID_HOME}/platform-tools && export ANDROID_SDK_ROOT=~/Library/Android/sdk
-
-
-JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
-export JAVA_HOME
-export PATH="$PATH:$JAVA_HOME/bin"
-#
-#export PATH="/usr/local/opt/openjdk@8/bin:$PATH"
-#export PATH="~/Library/Java/JavaVirtualMachines/zulu8/bin:$PATH"
-
-# Python
-export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -51,8 +49,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
-#ZSH_THEME="griffin"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="griffin"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -68,38 +66,55 @@ plugins=(
   gitfast
   git-extras
   zsh-autosuggestions
-  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
 
-### Github Token
-export GITHUB_NPM_TOKEN=
+[ -f "$HOME/.secrets.zsh" ] && source "$HOME/.secrets.zsh"
 
 ### Defined Logging Aliases
-alias dlogs='AWS_PROFILE=dev aws logs tail --follow --format short $(aws logs describe-log-groups | jq -r ".logGroups[].logGroupName" | fzf)'
+alias awsauth='aws sso login --sso-session company-z'
+alias dlogs='AWS_PROFILE=dev aws logs tail --follow --format short $(AWS_PROFILE=dev aws logs describe-log-groups | jq -r ".logGroups[].logGroupName" | fzf)'
 alias slogs='AWS_PROFILE=staging aws logs tail --follow --format short $(AWS_PROFILE=staging aws logs describe-log-groups | jq -r ".logGroups[].logGroupName" | fzf)'
 alias plogs='AWS_PROFILE=production aws logs tail --follow --format short $(AWS_PROFILE=production aws logs describe-log-groups | jq -r ".logGroups[].logGroupName" | fzf)'
 
-### Pikalytics EC2 SSH
-alias  pika='ssh -i ~/Keys/pikalytics.pem ec2-user@34.197.205.97'
+### Kubernetes logs: pick a context, then a replica set, then tail all its pods.
+# Usage: klogs [context]
+function klogs() {
+  local ctx=${1:-$(kubectl config get-contexts -o name | fzf --prompt='context> ')}
+  [[ -z $ctx ]] && return
+  # Skip scaled-down replica sets; old deployment revisions leave many behind.
+  local rs=$(kubectl --context "$ctx" get rs -A --no-headers | awk '$3 > 0' | fzf --prompt='replicaset> ' | awk '{print $1, $2}')
+  [[ -z $rs ]] && return
+  local ns=${rs% *} name=${rs#* }
+  local selector=$(kubectl --context "$ctx" get rs -n "$ns" "$name" -o json \
+    | jq -r '.spec.selector.matchLabels | to_entries | map("\(.key)=\(.value)") | join(",")')
+  kubectl --context "$ctx" logs -f --tail=200 --all-containers --prefix --max-log-requests=50 -n "$ns" -l "$selector"
+}
 
+# Open k9s on a picked context.
+# Usage: k9 [context]
+function k9() {
+  local ctx=${1:-$(kubectl config get-contexts -o name | fzf --prompt='context> ')}
+  [[ -z $ctx ]] && return
+  k9s --context "$ctx"
+}
+
+alias cc='claude'
 
 ### QOL Aliases
 alias grep='grep -n --color'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
+alias pn='pnpm'
+alias cur='cursor'
 alias python3='python3.10'
 
-### powerlevel10k
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+alias pip='pip3'
 
-### Alternative to gitfast plugin to reduce git latency
-#__git_files () {
-#    _wanted files expl 'local files' _files
-#}
+alias gpmain='git pull origin main'
+alias gpmaster='git pull origin master'
 
 ### zsh-autosuggestion config
 # Bind tab to maintain bash-like tab completion
@@ -109,8 +124,11 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 # Skip underscores in forward-word
 WORDCHARS+='_.'
 
+SAVEHIST=100000  # History file size
+HISTSIZE=20000   # Session history size
+
 if [[ $OSTYPE == darwin* && $CPUTYPE == arm64 ]]; then
-  alias brew=/Users/griffin//homebrew/bin/brew
+  alias brew=/opt/homebrew/bin/brew
 else
   alias brew=/usr/local/bin/brew
 fi
@@ -123,3 +141,53 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
+
+export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
+
+# ---- nvm: fast startup (the old `source $(brew --prefix nvm)/nvm.sh` was ~360ms) ----
+# Put the default node version on PATH directly using cheap file/glob ops, so we
+# never source the slow nvm.sh at login. node/npm/npx resolve exactly as before.
+export NVM_DIR="$HOME/.nvm"
+NVM_SH="/opt/homebrew/opt/nvm/nvm.sh"
+if [[ -d "$NVM_DIR/versions/node" ]]; then
+  _nvm_def="${$(<$NVM_DIR/alias/default):-}"
+  _nvm_vers=( $NVM_DIR/versions/node/v${_nvm_def#v}*(/Nn) )
+  (( ${#_nvm_vers} )) && path=( ${_nvm_vers[-1]}/bin $path )
+  unset _nvm_def _nvm_vers
+fi
+# Load the full nvm machinery only the first time you actually call `nvm`
+# (e.g. `nvm use`, `nvm install`, `nvm ls`).
+nvm() {
+  unset -f nvm
+  [ -s "$NVM_SH" ] || NVM_SH="$(brew --prefix nvm 2>/dev/null)/nvm.sh"
+  [ -s "$NVM_SH" ] && source "$NVM_SH"
+  nvm "$@"
+}
+export PATH="$HOME/.local/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/griffin/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# Added by Antigravity
+export PATH="/Users/griffin/.antigravity/antigravity/bin:$PATH"
+
+export EDITOR="cursor --wait"
+
+
+function push() {
+    git add .
+    git commit -a -m "$1"
+    git push
+}
+
+
+# peon-ping quick controls
+alias peon="bash ~/.claude/hooks/peon-ping/peon.sh"
+[ -f ~/.claude/hooks/peon-ping/completions.bash ] && source ~/.claude/hooks/peon-ping/completions.bash

@@ -1,0 +1,31 @@
+#!/bin/sh
+set -eu
+
+yabai=/opt/homebrew/bin/yabai
+loader=/Library/ScriptingAdditions/yabai.osax/Contents/MacOS/loader
+
+# yabai >= 7.1.16 ships an arm64e loader with PAC ABI caps 0x81; Sequoia's Dock is 0x80 and refuses it.
+# https://github.com/asmvik/yabai/issues/2686
+patch_loader() {
+    slice=$(otool -f "$loader" | awk '
+        /^architecture/ { arch = $2 }
+        /capabilities 0x81/ { found = arch }
+        /offset/ && arch == found && found != "" { print found, $2; exit }
+    ')
+    [ -n "$slice" ] || return 0
+    set -- $slice
+    fat_byte=$((8 + $1 * 20 + 4))
+    macho_byte=$(($2 + 11))
+    for byte in $fat_byte $macho_byte; do
+        [ "$(xxd -s "$byte" -l 1 -p "$loader")" = 81 ] || { echo "unexpected byte at $byte in $loader" >&2; exit 1; }
+    done
+    for byte in $fat_byte $macho_byte; do
+        printf '\200' | dd of="$loader" bs=1 seek="$byte" count=1 conv=notrunc 2>/dev/null
+    done
+    codesign -f -s - "$loader"
+    echo "patched $loader"
+}
+
+"$yabai" --load-sa && exit 0
+patch_loader
+"$yabai" --load-sa
