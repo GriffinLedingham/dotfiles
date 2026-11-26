@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+yabai -m query --displays | jq -r '.[] | "\(.id) \(.spaces | join(" "))"' | while read -r id spaces; do
+  if [ "$(osascript -l JavaScript -e "ObjC.import('CoreGraphics'); \$.CGDisplayIsBuiltin($id)")" = "1" ]; then
+    top=20
+  else
+    top=54
+  fi
+  for space in $spaces; do
+    yabai -m space "$space" --padding "abs:$top:14:14:14"
+  done
+done
