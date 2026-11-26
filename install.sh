@@ -1,78 +1,42 @@
-my_dir=`pwd`
+#!/bin/sh
+set -eu
 
-ln -sf "$my_dir"/atom/config.cson ~/.atom/config.cson;
-echo "Atom config.cson linked!";
+my_dir=$(cd "$(dirname "$0")" && pwd)
 
-ln -sf "$my_dir"/atom/keymap.cson ~/.atom/keymap.cson;
-echo "Atom keymap.cson linked!";
+link() {
+    mkdir -p "$(dirname "$2")"
+    if [ -d "$2" ] && [ ! -L "$2" ]; then
+        mv "$2" "$2.bak"
+    fi
+    ln -sfn "$my_dir/$1" "$2"
+    echo "linked $2"
+}
 
-ln -sf "$my_dir"/atom/styles.less ~/.atom/styles.less;
-echo "Atom styles.less linked!";
+link zsh/zshrc ~/.zshrc
+link zsh/zshenv ~/.zshenv
+link zsh/griffin.zsh-theme ~/.oh-my-zsh/custom/themes/griffin.zsh-theme
+link git/gitconfig ~/.gitconfig
+link git/ignore ~/.config/git/ignore
+link vim/init.vim ~/.config/nvim/init.vim
+link vim/autoload ~/.config/nvim/autoload
+link vim/colors ~/.config/nvim/colors
+link kitty/kitty.conf ~/.config/kitty/kitty.conf
+link kitty/kitty-dark.conf ~/.config/kitty/kitty-dark.conf
+link kitty/kitty-light.conf ~/.config/kitty/kitty-light.conf
 
-mkdir -p ~/.bash;
-ln -sf "$my_dir"/bash/git-prompt ~/.bash/git-prompt;
-echo "bash git-prompt linked!";
-
-ln -sf "$my_dir"/bash/bash_profile ~/.bash_profile;
-echo "bash_profile linked!";
-
-ln -sf "$my_dir"/git/gitconfig ~/.gitconfig;
-echo "gitconfig linked!";
-
-ln -sf "$my_dir"/hyper/hyper.js  ~/.hyper.js;
-echo "hyper.js linked!";
-
-ln -sf "$my_dir"/karabiner/karabiner.json  ~/.config/karabiner/karabiner.json;
-echo "Karabiner linked!";
-
-mkdir -p ~/.config/kitty;
-ln -sf "$my_dir"/kitty/kitty.conf  ~/.config/kitty/kitty.conf;
-ln -sf "$my_dir"/kitty/kitty-dark.conf  ~/.config/kitty/kitty-dark.conf;
-ln -sf "$my_dir"/kitty/kitty-light.conf  ~/.config/kitty/kitty-light.conf;
-echo "kitty linked!";
-
-ln -sf "$my_dir"/slate/slate  ~/.slate;
-echo "slate linked!";
-
-ln -sf "$my_dir"/sublime/profile.sublime-keymap ~/Library/"Application Support"/"Sublime Text 3"/Packages/User/"Default (OSX).sublime-keymap";
-echo "Sublime linked!";
-
-cp -r "$my_dir"/vim/autoload ~/.vim/autoload;
-cp -r "$my_dir"/vim/autoload ~/.config/nvim/;
-echo "vim autoload linked!";
-
-cp -r "$my_dir"/vim/colors ~/.config/nvim/;
-cp -r "$my_dir"/vim/colors ~/.vim/colors;
-echo "vim colors linked!";
-
-ln -sf "$my_dir"/vim/init.vim  ~/.vimrc;
-ln -sf "$my_dir"/vim/init.vim  ~/.config/nvim/init.vim;
-echo "vimrc linked!";
-
-ln -sf "$my_dir"/robo/robomongorc.js  ~/.robomongorc.js;
-echo "robo linked!";
-
-ln -sf "$my_dir"/skhd/skhdrc  ~/.skhdrc;
-echo "skhd linked!";
-
-ln -sf "$my_dir"/chunkwm/chunkwmrc  ~/.chunkwmrc;
-echo "chunk linked!";
-
-ln -sf "$my_dir"/tmux/tmux.conf  ~/.tmux.conf;
-echo "tmux linked!";
-
-cp -r "$my_dir"/ubersicht ~/Library/Application\ Support/Übersicht/widgets
-chmod +x ~/Library/Application\ Support/Übersicht/widgets
-echo "ubersicht linked!";
-
-ln -sf "$my_dir"/yabai/yabairc  ~/.yabairc;
-echo "yabai linked!";
-
-sudo install -o root -g wheel -m 755 "$my_dir"/yabai/yabai-load-sa /usr/local/libexec/yabai-load-sa;
-echo "yabai-load-sa installed!";
-
-ln -sf "$my_dir"/zsh/zshrc  ~/.zshrc;
-echo "zshrc linked!";
-
-ln -sfn "$my_dir"/sketchybar  ~/.config/sketchybar;
-echo "sketchybar linked!";
+case "$(uname)" in
+Darwin)
+    link cursor/settings.json ~/Library/"Application Support"/Cursor/User/settings.json
+    link cursor/keybindings.json ~/Library/"Application Support"/Cursor/User/keybindings.json
+    link skhd/skhdrc ~/.skhdrc
+    link yabai/yabairc ~/.yabairc
+    link sketchybar ~/.config/sketchybar
+    sudo install -o root -g wheel -m 755 "$my_dir/yabai/yabai-load-sa" /usr/local/libexec/yabai-load-sa
+    echo "installed /usr/local/libexec/yabai-load-sa"
+    ;;
+Linux)
+    link cursor/settings.json ~/.config/Cursor/User/settings.json
+    link cursor/keybindings.json ~/.config/Cursor/User/keybindings.json
+    link i3/config ~/.config/i3/config
+    ;;
+esac

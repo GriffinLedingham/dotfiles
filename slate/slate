@@ -1,5 +1,0 @@
-# This is griffin's slate file
-
-# Window Hints
-bind esc:cmd hint QWERTYUIOP
-bind tab:cmd hint QWERTYUIOP
